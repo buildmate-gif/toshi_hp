@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プロフィール | 小畑寿哉</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="common.css">
+<style>
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: start;
+  }
+  .about-bio {
+    font-size: 15px; line-height: 2.2;
+    color: var(--ink-l); font-weight: 300;
+  }
+  .about-bio p + p { margin-top: 24px; }
+  .about-bio strong { color: var(--navy); font-weight: 500; }
+  .about-cards { display: flex; flex-direction: column; gap: 20px; }
+  .about-card {
+    background: var(--ivory);
+    border: 1px solid rgba(194,164,109,0.25);
+    padding: 28px 32px; position: relative;
+  }
+  .about-card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+  .about-card-label {
+    font-size: 9px; letter-spacing: 0.3em;
+    color: var(--gold); font-weight: 300; margin-bottom: 10px;
+  }
+  .about-card-text {
+    font-family: var(--serif); font-size: 16px;
+    color: var(--navy); line-height: 1.7; letter-spacing: 0.04em;
+  }
+  .about-keywords {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px;
+  }
+  .about-keyword {
+    font-size: 11px; letter-spacing: 0.15em;
+    border: 1px solid rgba(92,59,138,0.3);
+    color: var(--purple); padding: 6px 16px; font-weight: 300;
+  }
+
+  /* Timeline */
+  .timeline { margin-top: 80px; }
+  .timeline-title {
+    font-family: var(--serif); font-size: 28px;
+    color: var(--navy); letter-spacing: 0.06em;
+    margin-bottom: 48px; font-weight: 400;
+  }
+  .timeline-items { position: relative; padding-left: 32px; }
+  .timeline-items::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 1px; background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+  .timeline-item {
+    position: relative; padding-bottom: 44px;
+  }
+  .timeline-item::before {
+    content: ''; position: absolute; left: -36px; top: 6px;
+    width: 8px; height: 8px; border-radius: 50%;
+    border: 1px solid var(--gold); background: var(--ivory);
+  }
+  .timeline-year {
+    font-size: 10px; letter-spacing: 0.3em;
+    color: var(--gold); font-weight: 300; margin-bottom: 8px;
+  }
+  .timeline-text {
+    font-size: 15px; color: var(--ink-l);
+    line-height: 1.9; font-weight: 300;
+  }
+  .timeline-text strong { color: var(--navy); font-weight: 500; }
+
+  /* Archetype */
+  .archetype-section {
+    background: var(--navy); padding: 100px 48px;
+    position: relative; overflow: hidden;
+  }
+  .archetype-section::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(92,59,138,0.3) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .archetype-section .section-label { color: var(--gold); }
+  .archetype-section .section-label::before { background: var(--gold); }
+  .archetype-section .section-title { color: var(--ivory); }
+  .archetype-grid {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 24px;
+  }
+  .archetype-card {
+    border: 1px solid rgba(194,164,109,0.2);
+    padding: 40px 32px; position: relative;
+    transition: border-color 0.3s;
+  }
+  .archetype-card.main {
+    border-color: rgba(194,164,109,0.6);
+    background: rgba(194,164,109,0.05);
+  }
+  .archetype-card:hover { border-color: rgba(194,164,109,0.5); }
+  .archetype-badge {
+    font-size: 9px; letter-spacing: 0.25em;
+    color: var(--gold); border: 1px solid rgba(194,164,109,0.4);
+    display: inline-block; padding: 4px 12px; margin-bottom: 20px;
+    font-weight: 300;
+  }
+  .archetype-name {
+    font-family: var(--serif); font-size: 24px;
+    color: var(--ivory); letter-spacing: 0.06em;
+    margin-bottom: 16px; font-weight: 400;
+  }
+  .archetype-desc {
+    font-size: 13px; color: rgba(244,240,232,0.6);
+    line-height: 2; font-weight: 300;
+  }
+
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    .archetype-grid { grid-template-columns: 1fr; }
+    .archetype-section { padding: 72px 24px; }
+  }
+</style>
+</head>
+<body>
+<nav id="main-nav"></nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero above-fold">
+  <div class="page-hero-inner">
+    <div class="page-hero-label reveal">PROFILE</div>
+    <h1 class="page-hero-title reveal reveal-delay-1">プロフィール</h1>
+    <div class="page-hero-en reveal reveal-delay-2">TOSHIYA OBATA</div>
+  </div>
+</div>
+
+<!-- BIO -->
+<section style="background:var(--ivory-d);">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-bio reveal">
+        <p>
+          <strong>小畑寿哉</strong>（おばた としや）。<br>
+          HR・組織変革・キャリア支援の領域で活動する変容の導き手。
+        </p>
+        <p>
+          1on1コーチング、組織変革コンサルティング、LP・PRコンテンツ制作、
+          EC・Webビジネス支援など、幅広い領域でクライアントの変容を支えてきた。
+        </p>
+        <p>
+          NLP、StrengthsFinder、Moon &amp; Trust、The ReBrandなど
+          複数の手法を掛け合わせた独自のアプローチで、
+          <strong>「本来の自分へ還る静かな変容」</strong>を届けている。
+        </p>
+        <p>
+          動き続けてきた人の中にある迷いや葛藤を、
+          じっくりほどき、次の役割への道筋を共に整える。
+        </p>
+        <div class="about-keywords">
+          <span class="about-keyword">NLP</span>
+          <span class="about-keyword">StrengthsFinder</span>
+          <span class="about-keyword">組織変革</span>
+          <span class="about-keyword">1on1コーチング</span>
+          <span class="about-keyword">キャリア変容</span>
+          <span class="about-keyword">HR</span>
+          <span class="about-keyword">Moon &amp; Trust</span>
+          <span class="about-keyword">The ReBrand</span>
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline reveal">
+          <div class="timeline-title">歩み</div>
+          <div class="timeline-items">
+            <div class="timeline-item">
+              <div class="timeline-year">HR・組織変革期</div>
+              <div class="timeline-text">企業のHR・組織設計・チームビルディングに従事。<strong>50名以上</strong>の変容を支援。</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">コーチング本格始動</div>
+              <div class="timeline-text">NLP・StrengthsFinderを軸にした<strong>1on1コーチング</strong>を本格展開。管理職・経営者・転機の方を中心に支援。</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">ブランディング・コンテンツ支援</div>
+              <div class="timeline-text">LP・PRコンテンツ制作、EC・Webビジネス伴走支援を開始。<strong>TheReBrand.inc・Moon &amp; Trust</strong>などと連携。</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">現在</div>
+              <div class="timeline-text">おふぃすまきの役員として、変容の場を提供し続けている。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-cards">
+        <div class="about-card reveal reveal-delay-1">
+          <div class="about-card-label">MISSION</div>
+          <div class="about-card-text">静かな変容を通じて、<br>本来の自分へ還るための場を届ける</div>
+        </div>
+        <div class="about-card reveal reveal-delay-2">
+          <div class="about-card-label">VISION</div>
+          <div class="about-card-text">誰もが自分の内なる力を信じ、<br>次のフェーズへと進める社会</div>
+        </div>
+        <div class="about-card reveal reveal-delay-3">
+          <div class="about-card-label">APPROACH</div>
+          <div class="about-card-text">叡智・深さ・品格をもって、<br>内なる力を引き出す対話</div>
+        </div>
+        <div class="about-card reveal reveal-delay-4">
+          <div class="about-card-label">KEYWORDS</div>
+          <div class="about-card-text">祓い・整い・還る<br>静かな変容 / 内なる力 / 品格</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHETYPE -->
+<div class="archetype-section">
+  <div class="section-inner">
+    <div class="section-label reveal">BRAND ARCHETYPE</div>
+    <h2 class="section-title reveal reveal-delay-1">
+      ブランドアーキタイプ
+      <span class="section-title-en" style="color:rgba(244,240,232,0.4);">WHO I AM</span>
+    </h2>
+    <div class="archetype-grid">
+      <div class="archetype-card main reveal reveal-delay-1">
+        <div class="archetype-badge">MAIN</div>
+        <div class="archetype-name">Magician<br>魔法使い</div>
+        <div class="archetype-desc">変容の導き手。静けさと叡智をもって、人の内なる力を引き出し、本来の姿へと還る場を創る。神秘的だが怪しくない、高貴だが近寄りがたくない存在。</div>
+      </div>
+      <div class="archetype-card reveal reveal-delay-2">
+        <div class="archetype-badge">SUB</div>
+        <div class="archetype-name">Sage<br>賢者</div>
+        <div class="archetype-desc">深い知識と洞察で真実を照らし出す。StrengthsFinder・NLP・ブランドアーキタイプなど複数の手法を統合した叡智のアプローチ。</div>
+      </div>
+      <div class="archetype-card reveal reveal-delay-3">
+        <div class="archetype-badge">SUB</div>
+        <div class="archetype-name">Caregiver<br>世話役</div>
+        <div class="archetype-desc">深い共感と寄り添いで、相手の歩みを支える。動き続けてきた人の迷いと葛藤に、じっくりと耳を傾ける存在。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <div class="cta-band-label reveal">NEXT</div>
+    <h2 class="cta-band-title reveal reveal-delay-1">サービスを見る</h2>
+    <p class="cta-band-sub reveal reveal-delay-2">小畑寿哉が提供する6つのサービスをご覧ください。</p>
+    <a href="services.html" class="cta-band-btn reveal reveal-delay-3">
+      サービス一覧へ <span class="btn-arrow"></span>
+    </a>
+  </div>
+</div>
+
+<footer id="main-footer"></footer>
+<script src="common.js"></script>
+</body>
+</html>

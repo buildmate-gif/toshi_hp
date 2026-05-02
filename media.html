@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>メディア | 小畑寿哉</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="common.css">
+<style>
+  .media-grid {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 24px;
+  }
+  .media-card {
+    border: 1px solid rgba(45,58,100,0.1); padding: 36px;
+    transition: border-color 0.3s, transform 0.3s;
+    background: var(--ivory);
+  }
+  .media-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+  .media-type {
+    font-size: 9px; letter-spacing: 0.25em; color: var(--gold);
+    font-weight: 300; margin-bottom: 16px;
+    border: 1px solid rgba(194,164,109,0.3);
+    display: inline-block; padding: 4px 10px;
+  }
+  .media-title {
+    font-family: var(--serif); font-size: 17px;
+    color: var(--navy); line-height: 1.7;
+    letter-spacing: 0.04em; margin-bottom: 12px;
+  }
+  .media-org {
+    font-size: 11px; color: var(--ink-l);
+    font-weight: 300; letter-spacing: 0.1em; margin-bottom: 8px;
+  }
+  .media-date {
+    font-size: 10px; color: rgba(74,70,80,0.5);
+    font-weight: 300; letter-spacing: 0.12em;
+  }
+  @media (max-width: 900px) {
+    .media-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<nav id="main-nav"></nav>
+
+<div class="page-hero above-fold">
+  <div class="page-hero-inner">
+    <div class="page-hero-label reveal">MEDIA</div>
+    <h1 class="page-hero-title reveal reveal-delay-1">メディア・登場実績</h1>
+    <div class="page-hero-en reveal reveal-delay-2">MEDIA APPEARANCES</div>
+  </div>
+</div>
+
+<section style="background:var(--ivory-d);">
+  <div class="section-inner">
+    <div class="section-label reveal">ALL MEDIA</div>
+    <h2 class="section-title reveal reveal-delay-1">
+      登場実績一覧
+      <span class="section-title-en">APPEARANCES</span>
+    </h2>
+    <div class="media-grid">
+      <div class="media-card reveal reveal-delay-1">
+        <div class="media-type">PODCAST</div>
+        <div class="media-title">Office Maki.tv — キャリア変容と内なる力の引き出し方</div>
+        <div class="media-org">Office Maki.tv</div>
+        <div class="media-date">2025</div>
+      </div>
+      <div class="media-card reveal reveal-delay-2">
+        <div class="media-type">WORKSHOP</div>
+        <div class="media-title">StrengthsFinder × NLP 実践ワークショップ登壇</div>
+        <div class="media-org">TheReBrand.inc</div>
+        <div class="media-date">2024</div>
+      </div>
+      <div class="media-card reveal reveal-delay-3">
+        <div class="media-type">SEMINAR</div>
+        <div class="media-title">組織変革とブランドアーキタイプセミナー</div>
+        <div class="media-org">Moon &amp; Trust</div>
+        <div class="media-date">2024</div>
+      </div>
+      <div class="media-card reveal reveal-delay-1">
+        <div class="media-type">INTERVIEW</div>
+        <div class="media-title">HR領域における1on1の可能性について</div>
+        <div class="media-org">APJ Media</div>
+        <div class="media-date">2024</div>
+      </div>
+      <div class="media-card reveal reveal-delay-2">
+        <div class="media-type">COLUMN</div>
+        <div class="media-title">転機を迎えた人への寄り添い方 — 静かな変容のすすめ</div>
+        <div class="media-org">掲載媒体</div>
+        <div class="media-date">2023</div>
+      </div>
+      <div class="media-card reveal reveal-delay-3">
+        <div class="media-type">TRAINING</div>
+        <div class="media-title">管理職向けコーチングスキル研修プログラム</div>
+        <div class="media-org">企業研修</div>
+        <div class="media-date">2023</div>
+      </div>
+      <div class="media-card reveal reveal-delay-1">
+        <div class="media-type">PODCAST</div>
+        <div class="media-title">StrengthsFinderで見えてくる「本来の自分」</div>
+        <div class="media-org">Office Maki.tv</div>
+        <div class="media-date">2023</div>
+      </div>
+      <div class="media-card reveal reveal-delay-2">
+        <div class="media-type">SEMINAR</div>
+        <div class="media-title">NLPを活用したチームビルディングの実践</div>
+        <div class="media-org">HR研究会</div>
+        <div class="media-date">2022</div>
+      </div>
+      <div class="media-card reveal reveal-delay-3">
+        <div class="media-type">WORKSHOP</div>
+        <div class="media-title">ブランドアーキタイプ × キャリア設計ワークショップ</div>
+        <div class="media-org">The ReBrand</div>
+        <div class="media-date">2022</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <div class="cta-band-label reveal">CONTACT</div>
+    <h2 class="cta-band-title reveal reveal-delay-1">登壇・取材のご依頼</h2>
+    <p class="cta-band-sub reveal reveal-delay-2">講演・研修・メディア取材のご依頼はお気軽にご相談ください。</p>
+    <a href="contact.html" class="cta-band-btn reveal reveal-delay-3">
+      お問い合わせはこちら <span class="btn-arrow"></span>
+    </a>
+  </div>
+</div>
+
+<footer id="main-footer"></footer>
+<script src="common.js"></script>
+</body>
+</html>

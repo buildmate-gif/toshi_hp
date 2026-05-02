@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サービス | 小畑寿哉</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="common.css">
+<style>
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 28px;
+  }
+  .service-card {
+    background: var(--ivory-d); padding: 44px 36px;
+    position: relative; overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
+  }
+  .service-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+    height: 3px; background: linear-gradient(to right, var(--gold), transparent);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+  }
+  .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(45,58,100,0.12); }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-number {
+    font-size: 11px; letter-spacing: 0.2em;
+    color: var(--gold); font-weight: 300; margin-bottom: 24px;
+  }
+  .service-icon { width: 44px; height: 44px; margin-bottom: 20px; color: var(--navy); }
+  .service-title {
+    font-family: var(--serif); font-size: 20px;
+    font-weight: 400; color: var(--navy);
+    letter-spacing: 0.06em; line-height: 1.5; margin-bottom: 16px;
+  }
+  .service-desc { font-size: 13px; color: var(--ink-l); line-height: 2; font-weight: 300; }
+  .service-tag {
+    display: inline-block; font-size: 9px; letter-spacing: 0.2em;
+    color: var(--gold); border: 1px solid rgba(194,164,109,0.4);
+    padding: 4px 12px; margin-top: 24px; font-weight: 300;
+  }
+  .service-detail {
+    margin-top: 20px; padding-top: 20px;
+    border-top: 1px solid rgba(194,164,109,0.15);
+    font-size: 12px; color: var(--ink-l);
+    line-height: 1.9; font-weight: 300;
+  }
+  @media (max-width: 900px) {
+    .services-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<nav id="main-nav"></nav>
+
+<div class="page-hero above-fold">
+  <div class="page-hero-inner">
+    <div class="page-hero-label reveal">SERVICE</div>
+    <h1 class="page-hero-title reveal reveal-delay-1">提供サービス</h1>
+    <div class="page-hero-en reveal reveal-delay-2">WHAT I OFFER</div>
+  </div>
+</div>
+
+<section style="background:var(--ivory);">
+  <div class="section-inner">
+    <div class="section-label reveal">ALL SERVICES</div>
+    <h2 class="section-title reveal reveal-delay-1">
+      6つの支援領域
+      <span class="section-title-en">AREAS OF SUPPORT</span>
+    </h2>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-number">01</div>
+        <svg class="service-icon" viewBox="0 0 44 44" fill="none">
+          <circle cx="22" cy="22" r="20" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+          <path d="M14 22 C14 17 18 14 22 14 C26 14 30 17 30 22 C30 27 26 30 22 30" stroke="currentColor" stroke-width="1.2" fill="none"/>
+          <circle cx="22" cy="22" r="4" fill="currentColor" opacity="0.5"/>
+          <path d="M22 30 L22 36" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+        </svg>
+        <div class="service-title">1on1コーチング<br>個別セッション</div>
+        <div class="service-desc">迷いや葛藤をほどき、本来の自分への道筋を共に整える個別セッション。</div>
+        <div class="service-detail">NLP・StrengthsFinder・ブランドアーキタイプを組み合わせた独自アプローチ。深いところからの変容を支えます。</div>
+        <div class="service-tag">COACHING</div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-number">02</div>
+        <svg class="service-icon" viewBox="0 0 44 44" fill="none">
+          <rect x="6" y="10" width="32" height="24" rx="1" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+          <path d="M14 20 L22 16 L30 20" stroke="currentColor" stroke-width="1.2" fill="none"/>
+          <path d="M14 26 L22 22 L30 26" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.5"/>
+        </svg>
+        <div class="service-title">組織変革<br>コンサルティング</div>
+        <div class="service-desc">HR・組織設計・チームビルディングを通じて、組織の内なる力を引き出します。</div>
+        <div class="service-detail">持続的な変容を実現するコンサルティング支援。4名〜50名規模の組織に対応。</div>
+        <div class="service-tag">ORGANIZATION</div>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-number">03</div>
+        <svg class="service-icon" viewBox="0 0 44 44" fill="none">
+          <path d="M8 34 L8 18 L22 10 L36 18 L36 34" stroke="currentColor" stroke-width="1" opacity="0.4" fill="none"/>
+          <rect x="17" y="24" width="10" height="10" stroke="currentColor" stroke-width="1" fill="none" opacity="0.5"/>
+          <path d="M15 22 L22 18 L29 22" stroke="currentColor" stroke-width="1.2" fill="none"/>
+        </svg>
+        <div class="service-title">LP・PRコンテンツ<br>制作支援</div>
+        <div class="service-desc">ブランドの本質をことばにして届けるコンテンツ設計・制作サポート。</div>
+        <div class="service-detail">StrengthsFinderやブランドアーキタイプを活用した独自のアプローチで、あなたの価値を言語化します。</div>
+        <div class="service-tag">BRANDING</div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-number">04</div>
+        <svg class="service-icon" viewBox="0 0 44 44" fill="none">
+          <circle cx="14" cy="16" r="5" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+          <circle cx="30" cy="16" r="5" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+          <circle cx="22" cy="30" r="5" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+          <path d="M18 19 L20 25" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+          <path d="M26 19 L24 25" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+        </svg>
+        <div class="service-title">キャリア変容<br>支援プログラム</div>
+        <div class="service-desc">次のフェーズへ進もうとする方向けの、継続的サポートプログラム。</div>
+        <div class="service-detail">管理職・経営者・転機を迎えた方を対象に、深い対話と内省を軸にした複数回セッション型プログラム。</div>
+        <div class="service-tag">CAREER</div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-number">05</div>
+        <svg class="service-icon" viewBox="0 0 44 44" fill="none">
+          <path d="M10 32 L10 20 C10 15 14 12 22 12 C30 12 34 15 34 20 L34 32" stroke="currentColor" stroke-width="1" opacity="0.4" fill="none"/>
+          <path d="M16 22 L20 26 L28 18" stroke="currentColor" stroke-width="1.5" fill="none"/>
+        </svg>
+        <div class="service-title">EC・Webビジネス<br>伴走支援</div>
+        <div class="service-desc">立ち上げから成長フェーズまで、包括的な伴走支援。</div>
+        <div class="service-detail">PDCA設計から実装まで一貫してサポート。EC・Webの視点を加えたビジネス戦略を共に設計します。</div>
+        <div class="service-tag">BUSINESS</div>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-number">06</div>
+        <svg class="service-icon" viewBox="0 0 44 44" fill="none">
+          <path d="M22 8 L26 18 L38 18 L28 25 L32 36 L22 29 L12 36 L16 25 L6 18 L18 18 Z" stroke="currentColor" stroke-width="1" opacity="0.4" fill="none"/>
+        </svg>
+        <div class="service-title">研修・ワーク<br>ショップ登壇</div>
+        <div class="service-desc">企業研修・チームワークショップへの登壇。</div>
+        <div class="service-detail">StrengthsFinder・NLP・ブランドアーキタイプなど、実践的なプログラムを提供。参加者の内なる力を引き出します。</div>
+        <div class="service-tag">TRAINING</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <div class="cta-band-label reveal">CONTACT</div>
+    <h2 class="cta-band-title reveal reveal-delay-1">まずは、話してみませんか。</h2>
+    <p class="cta-band-sub reveal reveal-delay-2">無料の初回相談セッションをご用意しています。</p>
+    <a href="contact.html" class="cta-band-btn reveal reveal-delay-3">
+      無料相談・体験セッションへ <span class="btn-arrow"></span>
+    </a>
+  </div>
+</div>
+
+<footer id="main-footer"></footer>
+<script src="common.js"></script>
+</body>
+</html>

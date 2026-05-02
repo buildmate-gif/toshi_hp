@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>実績 | 小畑寿哉</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="common.css">
+<style>
+  .stats-section { background: var(--navy); padding: 100px 48px; position: relative; overflow: hidden; }
+  .stats-section::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at right, rgba(92,59,138,0.3) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .stats-section .section-label { color: var(--gold); }
+  .stats-section .section-label::before { background: var(--gold); }
+  .stats-section .section-title { color: var(--ivory); }
+  .stats-grid {
+    display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; margin-bottom: 72px;
+  }
+  .stat-item {
+    background: rgba(244,240,232,0.05); padding: 44px 32px;
+    border: 1px solid rgba(194,164,109,0.15); text-align: center;
+    transition: background 0.3s;
+  }
+  .stat-item:hover { background: rgba(244,240,232,0.09); }
+  .stat-number {
+    font-family: var(--serif); font-size: 48px;
+    color: var(--gold); font-weight: 400;
+    line-height: 1; margin-bottom: 12px; letter-spacing: 0.04em;
+  }
+  .stat-number sub { font-size: 22px; vertical-align: baseline; }
+  .stat-label { font-size: 12px; color: rgba(244,240,232,0.7); letter-spacing: 0.12em; font-weight: 300; }
+  .clients-row {
+    display: flex; flex-wrap: wrap; gap: 14px; align-items: center;
+  }
+  .clients-label {
+    font-size: 10px; letter-spacing: 0.3em;
+    color: var(--gold); font-weight: 300; width: 100%; margin-bottom: 4px;
+  }
+  .client-chip {
+    font-size: 11px; letter-spacing: 0.1em;
+    color: rgba(244,240,232,0.65);
+    border: 1px solid rgba(244,240,232,0.15);
+    padding: 7px 16px; font-weight: 300;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .client-chip:hover { border-color: rgba(194,164,109,0.5); color: var(--gold-l); }
+
+  /* Testimonials */
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(2,1fr); gap: 28px;
+  }
+  .testimonial-card {
+    background: var(--ivory); border: 1px solid rgba(194,164,109,0.2);
+    padding: 40px 36px; position: relative;
+  }
+  .testimonial-card::before {
+    content: '\201C'; font-family: var(--serif);
+    font-size: 72px; color: rgba(194,164,109,0.15);
+    position: absolute; top: 12px; left: 24px;
+    line-height: 1;
+  }
+  .testimonial-text {
+    font-size: 14px; color: var(--ink-l);
+    line-height: 2.2; font-weight: 300;
+    margin-bottom: 24px; padding-top: 20px;
+  }
+  .testimonial-meta {
+    font-size: 11px; letter-spacing: 0.15em;
+    color: var(--navy); font-weight: 400;
+  }
+  .testimonial-meta span {
+    display: block; font-size: 10px;
+    color: var(--gold); font-weight: 300;
+    letter-spacing: 0.2em; margin-top: 4px;
+  }
+
+  @media (max-width: 900px) {
+    .stats-grid { grid-template-columns: repeat(2,1fr); }
+    .stats-section { padding: 72px 24px; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<nav id="main-nav"></nav>
+
+<div class="page-hero above-fold">
+  <div class="page-hero-inner">
+    <div class="page-hero-label reveal">RESULTS</div>
+    <h1 class="page-hero-title reveal reveal-delay-1">実績・支援実績</h1>
+    <div class="page-hero-en reveal reveal-delay-2">ACHIEVEMENTS</div>
+  </div>
+</div>
+
+<!-- Stats -->
+<div class="stats-section">
+  <div class="section-inner">
+    <div class="section-label reveal">NUMBERS</div>
+    <h2 class="section-title reveal reveal-delay-1">
+      数字で見る実績
+      <span class="section-title-en" style="color:rgba(244,240,232,0.4);">BY THE NUMBERS</span>
+    </h2>
+    <div class="stats-grid">
+      <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-number">50<sub>+</sub></div>
+        <div class="stat-label">コーチング実績（人）</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-number">10<sub>年</sub></div>
+        <div class="stat-label">HR・組織変革の経験</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-3">
+        <div class="stat-number">4<sub>〜</sub>50</div>
+        <div class="stat-label">支援クライアント規模（名）</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-4">
+        <div class="stat-number">3,000<sub>+</sub></div>
+        <div class="stat-label">積み重ねた対話時間</div>
+      </div>
+    </div>
+    <div class="clients-row reveal reveal-delay-2">
+      <div class="clients-label">RELATED ORGANIZATIONS</div>
+      <span class="client-chip">おふぃすまきの</span>
+      <span class="client-chip">TheReBrand.inc</span>
+      <span class="client-chip">Moon &amp; Trust</span>
+      <span class="client-chip">APJ Media</span>
+      <span class="client-chip">Office Maki.tv</span>
+      <span class="client-chip">StrengthsFinder認定</span>
+    </div>
+  </div>
+</div>
+
+<!-- Testimonials -->
+<section style="background:var(--ivory-d);">
+  <div class="section-inner">
+    <div class="section-label reveal">VOICE</div>
+    <h2 class="section-title reveal reveal-delay-1">
+      クライアントの声
+      <span class="section-title-en">TESTIMONIALS</span>
+    </h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal reveal-delay-1">
+        <p class="testimonial-text">長年の迷いがほどけた感覚でした。自分がどこへ向かいたいのか、初めて腑に落ちた気がします。静かに、でも確かに変わっていく感覚が今もあります。</p>
+        <div class="testimonial-meta">
+          40代・管理職
+          <span>1on1コーチング</span>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <p class="testimonial-text">組織の空気が変わりました。チームメンバーが自分の言葉で語るようになり、お互いの強みを活かし合える場になってきたと感じています。</p>
+        <div class="testimonial-meta">
+          経営者・50代
+          <span>組織変革コンサルティング</span>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-3">
+        <p class="testimonial-text">StrengthsFinderのセッションで、自分の本来の強みに気づきました。転職を焦っていたのに、今の場所でできることがまだあると思えた。</p>
+        <div class="testimonial-meta">
+          30代・キャリア転換期
+          <span>キャリア変容支援</span>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-4">
+        <p class="testimonial-text">LPを一緒に作りながら、自分のブランドが言語化されていく過程が面白かった。お客様から「あなたに頼みたい」と言われる機会が増えました。</p>
+        <div class="testimonial-meta">
+          個人事業主・フリーランス
+          <span>LP・PRコンテンツ制作支援</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <div class="cta-band-label reveal">CONTACT</div>
+    <h2 class="cta-band-title reveal reveal-delay-1">あなたの変容を、共に。</h2>
+    <p class="cta-band-sub reveal reveal-delay-2">無料の初回相談セッションで、一歩を踏み出しましょう。</p>
+    <a href="contact.html" class="cta-band-btn reveal reveal-delay-3">
+      無料相談・体験セッションへ <span class="btn-arrow"></span>
+    </a>
+  </div>
+</div>
+
+<footer id="main-footer"></footer>
+<script src="common.js"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ご相談・お問い合わせ | 小畑寿哉</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="common.css">
+<style>
+  .contact-section {
+    background: var(--ivory-d); padding: 100px 48px;
+  }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start;
+  }
+  .contact-info { }
+  .contact-info-title {
+    font-family: var(--serif); font-size: 28px;
+    color: var(--navy); letter-spacing: 0.06em;
+    line-height: 1.6; margin-bottom: 28px; font-weight: 400;
+  }
+  .contact-info-desc {
+    font-size: 14px; color: var(--ink-l);
+    line-height: 2.3; font-weight: 300; margin-bottom: 40px;
+  }
+  .contact-detail-item {
+    display: flex; align-items: flex-start; gap: 16px;
+    margin-bottom: 24px; padding-bottom: 24px;
+    border-bottom: 1px solid rgba(194,164,109,0.15);
+  }
+  .contact-detail-item:last-child { border-bottom: none; }
+  .contact-detail-label {
+    font-size: 9px; letter-spacing: 0.25em; color: var(--gold);
+    font-weight: 300; min-width: 80px; padding-top: 2px;
+  }
+  .contact-detail-value {
+    font-size: 13px; color: var(--ink-l);
+    line-height: 1.9; font-weight: 300;
+  }
+  .contact-detail-value a { color: var(--navy); transition: color 0.2s; }
+  .contact-detail-value a:hover { color: var(--gold); }
+
+  /* Form */
+  .contact-form { }
+  .form-group { margin-bottom: 28px; }
+  .form-label {
+    display: block; font-size: 10px;
+    letter-spacing: 0.25em; color: var(--navy);
+    font-weight: 400; margin-bottom: 10px;
+  }
+  .form-label span {
+    font-size: 9px; color: var(--gold);
+    letter-spacing: 0.15em; margin-left: 8px; font-weight: 300;
+  }
+  .form-input, .form-select, .form-textarea {
+    width: 100%; background: var(--ivory);
+    border: 1px solid rgba(45,58,100,0.15);
+    padding: 14px 18px;
+    font-family: var(--sans); font-size: 14px;
+    color: var(--ink); font-weight: 300;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none; appearance: none;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(194,164,109,0.1);
+  }
+  .form-textarea { resize: vertical; min-height: 160px; line-height: 1.9; }
+  .form-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C2A46D' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 16px center;
+    padding-right: 40px;
+  }
+  .form-checkbox-group {
+    display: flex; flex-wrap: wrap; gap: 12px;
+  }
+  .form-checkbox-label {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; color: var(--ink-l); font-weight: 300;
+    cursor: pointer; letter-spacing: 0.08em;
+  }
+  .form-checkbox-label input {
+    width: 16px; height: 16px; accent-color: var(--gold); cursor: pointer;
+  }
+  .form-note {
+    font-size: 11px; color: rgba(74,70,80,0.6);
+    line-height: 1.9; font-weight: 300; margin-bottom: 32px;
+  }
+  .form-submit {
+    display: inline-flex; align-items: center; gap: 16px;
+    background: transparent; border: 1px solid var(--gold);
+    color: var(--ink); font-size: 13px; letter-spacing: 0.2em;
+    padding: 18px 52px; cursor: pointer;
+    font-family: var(--sans); font-weight: 400;
+    position: relative; overflow: hidden; transition: color 0.3s;
+  }
+  .form-submit::before {
+    content: ''; position: absolute; inset: 0;
+    background: var(--gold); transform: translateX(-100%);
+    transition: transform 0.35s ease; z-index: -1;
+  }
+  .form-submit:hover::before { transform: translateX(0); }
+  .form-submit:hover { color: var(--ivory); }
+
+  /* Thank you state */
+  .form-success {
+    display: none; text-align: center; padding: 60px 0;
+  }
+  .form-success-icon {
+    width: 56px; height: 56px; border: 1px solid var(--gold);
+    border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; margin: 0 auto 24px;
+  }
+  .form-success-title {
+    font-family: var(--serif); font-size: 24px;
+    color: var(--navy); letter-spacing: 0.08em; margin-bottom: 16px;
+    font-weight: 400;
+  }
+  .form-success-desc {
+    font-size: 14px; color: var(--ink-l);
+    line-height: 2; font-weight: 300;
+  }
+
+  @media (max-width: 900px) {
+    .contact-section { padding: 72px 24px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 52px; }
+  }
+</style>
+</head>
+<body>
+<nav id="main-nav"></nav>
+
+<div class="page-hero above-fold" style="background: var(--plum);">
+  <div class="page-hero-inner">
+    <div class="page-hero-label reveal">CONTACT</div>
+    <h1 class="page-hero-title reveal reveal-delay-1">ご相談・お問い合わせ</h1>
+    <div class="page-hero-en reveal reveal-delay-2">LET'S TALK</div>
+  </div>
+</div>
+
+<div class="contact-section">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <!-- Info -->
+      <div class="contact-info reveal">
+        <h2 class="contact-info-title">
+          まずは、<br>話してみませんか。
+        </h2>
+        <p class="contact-info-desc">
+          無料の初回相談セッションをご用意しています。<br>
+          どんな小さなことでも、あなたの今に、<br>
+          じっくり耳を傾けます。
+        </p>
+        <div class="contact-detail-item">
+          <div class="contact-detail-label">RESPONSE</div>
+          <div class="contact-detail-value">返信は2営業日以内にお送りします</div>
+        </div>
+        <div class="contact-detail-item">
+          <div class="contact-detail-label">SESSION</div>
+          <div class="contact-detail-value">初回60分・無料（オンライン）</div>
+        </div>
+        <div class="contact-detail-item">
+          <div class="contact-detail-label">EMAIL</div>
+          <div class="contact-detail-value">
+            <a href="mailto:contact@toshiya-obata.jp">contact@toshiya-obata.jp</a>
+          </div>
+        </div>
+        <div class="contact-detail-item">
+          <div class="contact-detail-label">NOTE</div>
+          <div class="contact-detail-value">秘密厳守・勧誘等は一切ありません</div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form reveal reveal-delay-2">
+        <form id="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label class="form-label" for="name">お名前 <span>必須</span></label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="例：山田 太郎" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">メールアドレス <span>必須</span></label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="例：taro@example.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="type">ご相談内容の種類</label>
+            <select class="form-select" id="type" name="type">
+              <option value="">選択してください</option>
+              <option value="coaching">1on1コーチング・個別セッション</option>
+              <option value="org">組織変革コンサルティング</option>
+              <option value="branding">LP・PRコンテンツ制作支援</option>
+              <option value="career">キャリア変容支援プログラム</option>
+              <option value="ec">EC・Webビジネス伴走支援</option>
+              <option value="training">研修・ワークショップ登壇</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">今の状況・ご関心（複数選択可）</label>
+            <div class="form-checkbox-group">
+              <label class="form-checkbox-label"><input type="checkbox" name="situation" value="1"> 転機・転換期にいる</label>
+              <label class="form-checkbox-label"><input type="checkbox" name="situation" value="2"> キャリアに迷っている</label>
+              <label class="form-checkbox-label"><input type="checkbox" name="situation" value="3"> 組織・チームの課題</label>
+              <label class="form-checkbox-label"><input type="checkbox" name="situation" value="4"> 自分のブランドを作りたい</label>
+              <label class="form-checkbox-label"><input type="checkbox" name="situation" value="5"> 本来の自分に還りたい</label>
+              <label class="form-checkbox-label"><input type="checkbox" name="situation" value="6"> その他</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">メッセージ <span>必須</span></label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="今の状況や気になっていること、どんな小さなことでもお気軽にどうぞ。" required></textarea>
+          </div>
+          <p class="form-note">
+            ※ いただいた情報は、ご連絡・サービスのご提案以外の目的には使用しません。<br>
+            ※ 秘密は厳守します。勧誘等は一切ありません。
+          </p>
+          <button type="submit" class="form-submit">
+            送信する <span class="btn-arrow"></span>
+          </button>
+        </form>
+
+        <!-- Success message -->
+        <div class="form-success" id="form-success">
+          <div class="form-success-icon">
+            <svg width="22" height="16" viewBox="0 0 22 16" fill="none">
+              <path d="M1 8L8 15L21 1" stroke="#C2A46D" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="form-success-title">送信が完了しました</div>
+          <p class="form-success-desc">
+            お問い合わせありがとうございます。<br>
+            2営業日以内にご連絡いたします。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer id="main-footer"></footer>
+<script src="common.js"></script>
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('form-success');
+    form.style.opacity = '0';
+    form.style.transition = 'opacity 0.4s';
+    setTimeout(() => {
+      form.style.display = 'none';
+      success.style.display = 'block';
+      success.style.opacity = '0';
+      success.style.transition = 'opacity 0.6s';
+      setTimeout(() => { success.style.opacity = '1'; }, 50);
+    }, 400);
+  }
+</script>
+</body>
+</html>

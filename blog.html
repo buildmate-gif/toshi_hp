@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>発信 | 小畑寿哉</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="common.css">
+<style>
+  .blog-grid {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 28px;
+  }
+  .blog-card {
+    background: var(--ivory);
+    transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;
+  }
+  .blog-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(45,58,100,0.1); }
+  .blog-thumb {
+    aspect-ratio: 3/2;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--purple) 100%);
+    position: relative; overflow: hidden;
+  }
+  .blog-thumb-pattern { position: absolute; inset: 0; opacity: 0.3; }
+  .blog-thumb-number {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 56px;
+    color: rgba(244,240,232,0.15); letter-spacing: 0.06em;
+  }
+  .blog-body { padding: 28px 28px 32px; }
+  .blog-tag {
+    font-size: 9px; letter-spacing: 0.25em;
+    color: var(--gold); font-weight: 300; margin-bottom: 12px;
+  }
+  .blog-title {
+    font-family: var(--serif); font-size: 17px;
+    color: var(--navy); line-height: 1.7;
+    letter-spacing: 0.04em; margin-bottom: 12px;
+  }
+  .blog-excerpt {
+    font-size: 12px; color: var(--ink-l);
+    line-height: 1.9; font-weight: 300; margin-bottom: 16px;
+  }
+  .blog-date { font-size: 10px; color: rgba(74,70,80,0.5); font-weight: 300; letter-spacing: 0.1em; }
+  @media (max-width: 900px) {
+    .blog-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<nav id="main-nav"></nav>
+
+<div class="page-hero above-fold">
+  <div class="page-hero-inner">
+    <div class="page-hero-label reveal">INSIGHTS</div>
+    <h1 class="page-hero-title reveal reveal-delay-1">発信コンテンツ</h1>
+    <div class="page-hero-en reveal reveal-delay-2">ARTICLES &amp; THOUGHTS</div>
+  </div>
+</div>
+
+<section style="background:var(--ivory-d);">
+  <div class="section-inner">
+    <div class="section-label reveal">ALL ARTICLES</div>
+    <h2 class="section-title reveal reveal-delay-1">
+      記事・コラム
+      <span class="section-title-en">WRITINGS</span>
+    </h2>
+    <div class="blog-grid">
+      <div class="blog-card reveal reveal-delay-1">
+        <div class="blog-thumb">
+          <svg class="blog-thumb-pattern" viewBox="0 0 300 200"><path d="M0 200 Q75 100 150 140 Q225 180 300 80 L300 200 Z" fill="rgba(194,164,109,0.2)"/></svg>
+          <div class="blog-thumb-number">変容</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-tag">COACHING</div>
+          <div class="blog-title">迷いと葛藤は、変容の入り口である</div>
+          <div class="blog-excerpt">「決められない」「前に進めない」という感覚は、実は変容のサインかもしれない。迷いをほどくための対話について。</div>
+          <div class="blog-date">2025.02</div>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-2">
+        <div class="blog-thumb" style="background: linear-gradient(135deg, #3B294B 0%, #2D3A64 100%)">
+          <svg class="blog-thumb-pattern" viewBox="0 0 300 200"><circle cx="150" cy="100" r="120" fill="none" stroke="rgba(194,164,109,0.2)" stroke-width="40"/></svg>
+          <div class="blog-thumb-number">叡智</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-tag">STRENGTH</div>
+          <div class="blog-title">StrengthsFinderで見えてくる「本来の自分」とは</div>
+          <div class="blog-excerpt">強みは、努力で磨くものではなく、すでに自分の中にあるもの。StrengthsFinderが明らかにする「本来の力」の話。</div>
+          <div class="blog-date">2025.01</div>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-3">
+        <div class="blog-thumb" style="background: linear-gradient(135deg, #2D3A64 0%, #5C3B8A 100%)">
+          <svg class="blog-thumb-pattern" viewBox="0 0 300 200"><path d="M0 0 L150 200 L300 0 Z" fill="rgba(244,240,232,0.05)"/><path d="M50 0 L200 200 L350 0 Z" fill="rgba(194,164,109,0.1)"/></svg>
+          <div class="blog-thumb-number">還る</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-tag">CAREER</div>
+          <div class="blog-title">次の役割へ進むために必要な「手放し」について</div>
+          <div class="blog-excerpt">新しい役割へ進むとき、何かを手放す必要がある。それは弱さではなく、成熟のしるし。</div>
+          <div class="blog-date">2024.12</div>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-1">
+        <div class="blog-thumb" style="background: linear-gradient(135deg, #3B294B 0%, #5C3B8A 100%)">
+          <svg class="blog-thumb-pattern" viewBox="0 0 300 200"><path d="M0 100 Q150 0 300 100 L300 200 L0 200 Z" fill="rgba(194,164,109,0.12)"/></svg>
+          <div class="blog-thumb-number">祓い</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-tag">PHILOSOPHY</div>
+          <div class="blog-title">「静かな変容」とはなにか — 品格ある深さについて</div>
+          <div class="blog-excerpt">派手な変化ではなく、内側からじわりと整う変容。その静けさの中にある本物の力について考える。</div>
+          <div class="blog-date">2024.11</div>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-2">
+        <div class="blog-thumb" style="background: linear-gradient(135deg, #2D3A64 0%, #3B294B 100%)">
+          <svg class="blog-thumb-pattern" viewBox="0 0 300 200"><rect x="50" y="50" width="200" height="100" fill="none" stroke="rgba(194,164,109,0.15)" stroke-width="1"/><rect x="70" y="70" width="160" height="60" fill="none" stroke="rgba(194,164,109,0.1)" stroke-width="1"/></svg>
+          <div class="blog-thumb-number">組織</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-tag">ORGANIZATION</div>
+          <div class="blog-title">1on1が機能する組織と機能しない組織の違い</div>
+          <div class="blog-excerpt">1on1の失敗は、「話し方」ではなく「在り方」の問題。心理的安全性を育む対話の本質について。</div>
+          <div class="blog-date">2024.10</div>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-3">
+        <div class="blog-thumb" style="background: linear-gradient(135deg, #5C3B8A 0%, #2D3A64 100%)">
+          <svg class="blog-thumb-pattern" viewBox="0 0 300 200"><circle cx="80" cy="80" r="50" fill="none" stroke="rgba(194,164,109,0.15)" stroke-width="1"/><circle cx="200" cy="130" r="60" fill="none" stroke="rgba(194,164,109,0.1)" stroke-width="1"/></svg>
+          <div class="blog-thumb-number">品格</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-tag">BRAND</div>
+          <div class="blog-title">ブランドアーキタイプで見つける「自分らしい発信」</div>
+          <div class="blog-excerpt">誰かの真似ではなく、自分の本質から発せられる言葉こそが人を動かす。Magicianアーキタイプの伝え方。</div>
+          <div class="blog-date">2024.09</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <div class="cta-band-label reveal">CONTACT</div>
+    <h2 class="cta-band-title reveal reveal-delay-1">まずは、話してみませんか。</h2>
+    <p class="cta-band-sub reveal reveal-delay-2">無料の初回相談セッションで、あなたの今に寄り添います。</p>
+    <a href="contact.html" class="cta-band-btn reveal reveal-delay-3">
+      無料相談・体験セッションへ <span class="btn-arrow"></span>
+    </a>
+  </div>
+</div>
+
+<footer id="main-footer"></footer>
+<script src="common.js"></script>
+</body>
+</html>
