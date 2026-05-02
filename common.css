@@ -85,6 +85,23 @@ nav#main-nav.scrolled {
   font-family: var(--sans);
   font-weight: 300;
 }
+.logo-path-main { stroke: var(--navy); transition: stroke 0.4s; }
+.logo-path-sub { stroke: var(--purple); transition: stroke 0.4s; }
+
+/* Light text overrides for dark hero */
+nav#main-nav.nav-light-text:not(.scrolled) .nav-logo-text,
+nav#main-nav.nav-light-text:not(.scrolled) .nav-links a {
+  color: var(--ivory);
+}
+nav#main-nav.nav-light-text:not(.scrolled) .nav-links a.active {
+  color: var(--ivory);
+}
+nav#main-nav.nav-light-text:not(.scrolled) .nav-hamburger span {
+  background: var(--ivory);
+}
+nav#main-nav.nav-light-text:not(.scrolled) .logo-path-main { stroke: var(--ivory); }
+nav#main-nav.nav-light-text:not(.scrolled) .logo-path-sub { stroke: var(--gold-l); }
+
 .nav-links {
   display: flex;
   align-items: center;
