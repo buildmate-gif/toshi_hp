@@ -1,4 +1,9 @@
 /* =============================================
+   GOOGLE FONTS (centralized)
+============================================= */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+/* =============================================
    DESIGN TOKENS
 ============================================= */
 :root {
@@ -463,4 +468,53 @@ footer {
 }
 @media (max-width: 600px) {
   nav#main-nav { padding: 16px 20px; }
+}
+
+/* =============================================
+   PAGE TRANSITIONS
+============================================= */
+body {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+body.page-fade-in {
+  opacity: 1;
+}
+body.page-fade-out {
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+/* =============================================
+   BACK TO TOP
+============================================= */
+.back-to-top {
+  position: fixed;
+  bottom: 36px; right: 36px;
+  z-index: 90;
+  width: 44px; height: 44px;
+  border: 1px solid var(--gold);
+  background: rgba(244,240,232,0.92);
+  backdrop-filter: blur(8px);
+  color: var(--gold);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s, transform 0.4s, background 0.2s, color 0.2s;
+  pointer-events: none;
+}
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.back-to-top:hover {
+  background: var(--gold);
+  color: var(--ivory);
+}
+@media (max-width: 600px) {
+  .back-to-top { bottom: 20px; right: 20px; width: 40px; height: 40px; }
 }

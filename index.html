@@ -4,9 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>小畑寿哉 | The Magician Sage</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<meta name="description" content="小畑寿哉 — 誰かを支えてきたあなたが、次の役割へ進む場。1on1コーチング・組織変革・キャリア変容支援を通じて、本来の自分へ還るための静かな変容を届けます。">
+<meta property="og:title" content="小畑寿哉 | The Magician Sage">
+<meta property="og:description" content="誰かを支えてきたあなたが、次の役割へ進む場。本来の自分へ還るための、静かな変容の場。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://toshiya-obata.jp/">
 <link rel="stylesheet" href="common.css">
 <style>
   /* Base Hero Styles from index.html */
@@ -15,7 +17,7 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     overflow: hidden;
     background: var(--ivory);
   }
@@ -41,21 +43,13 @@
   }
   .hero-content {
     position: relative; z-index: 3;
-    max-width: 900px;
+    max-width: 1100px;
+    margin: 0 auto;
     width: 100%;
     padding: 120px 48px 80px;
-    text-align: center;
+    text-align: left;
   }
-  .hero-label {
-    font-size: 11px; letter-spacing: 0.3em;
-    color: var(--gold); font-weight: 300;
-    margin-bottom: 28px;
-    display: flex; align-items: center; justify-content: center; gap: 16px;
-  }
-  .hero-label::before, .hero-label::after {
-    content: ''; display: inline-block;
-    width: 28px; height: 1px; background: var(--gold);
-  }
+
   .hero-title {
     font-family: var(--serif);
     font-size: clamp(32px, 4vw, 56px);
@@ -64,7 +58,7 @@
     margin-bottom: 36px;
   }
   .hero-divider {
-    display: flex; align-items: center; justify-content: center;
+    display: flex; align-items: center; justify-content: flex-start;
     gap: 16px; margin-bottom: 28px;
   }
   .hero-divider-line { width: 48px; height: 1px; background: var(--gold); }
@@ -74,17 +68,8 @@
   }
   .hero-sub {
     font-size: 15px; color: var(--ink-l);
-    line-height: 2.1; margin-bottom: 44px;
+    line-height: 2.1; margin-bottom: 64px;
     font-weight: 300;
-  }
-  .hero-name-block { margin-bottom: 52px; }
-  .hero-name-jp {
-    font-family: var(--serif); font-size: 22px;
-    font-weight: 400; letter-spacing: 0.12em; color: var(--navy);
-  }
-  .hero-name-en {
-    font-size: 10px; letter-spacing: 0.3em;
-    color: var(--gold); font-weight: 300; margin-top: 5px;
   }
   .hero-cta {
     display: inline-flex; align-items: center; gap: 16px;
@@ -309,25 +294,20 @@
     </svg>
   </div>
   <div class="hero-content">
-    <div class="hero-label reveal">The Magician Sage | 変容の賢者</div>
-    <h1 class="hero-title reveal reveal-delay-1">
+    <h1 class="hero-title reveal">
       誰かを支えてきた<br>
       あなたが、<br>
       次の役割へ進む場
     </h1>
-    <div class="hero-divider reveal reveal-delay-2">
+    <div class="hero-divider reveal reveal-delay-1">
       <div class="hero-divider-line"></div>
       <div class="hero-divider-dot"></div>
       <div class="hero-divider-line"></div>
     </div>
-    <p class="hero-sub reveal reveal-delay-3">
+    <p class="hero-sub reveal reveal-delay-2">
       本来の自分へ還るための、静かな変容の場
     </p>
-    <div class="hero-name-block reveal reveal-delay-4">
-      <div class="hero-name-jp">小畑 寿哉</div>
-      <div class="hero-name-en">TOSHIYA OBATA</div>
-    </div>
-    <a href="contact.html" class="hero-cta reveal reveal-delay-5">
+    <a href="contact.html" class="hero-cta reveal reveal-delay-3">
       ご相談はこちら
       <span class="btn-arrow"></span>
     </a>

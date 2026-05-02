@@ -106,7 +106,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <div class="footer-copy">© 2025 Toshiya Obata. All rights reserved.</div>
+        <div class="footer-copy">© ${new Date().getFullYear()} Toshiya Obata. All rights reserved.</div>
         <div class="footer-copy">静かな変容の場</div>
       </div>
     `;
@@ -127,6 +127,32 @@
   // Immediately reveal above-fold elements
   document.querySelectorAll('.above-fold .reveal, .page-hero .reveal').forEach(el => {
     setTimeout(() => el.classList.add('visible'), 150);
+  });
+
+  // Page fade-in on load
+  document.body.classList.add('page-fade-in');
+
+  // Page transition: fade out on link click
+  document.addEventListener('click', function(e) {
+    const link = e.target.closest('a[href]');
+    if (!link) return;
+    const href = link.getAttribute('href');
+    // Only intercept internal .html links
+    if (!href || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('#') || href.startsWith('tel:')) return;
+    e.preventDefault();
+    document.body.classList.add('page-fade-out');
+    setTimeout(() => { window.location.href = href; }, 300);
+  });
+
+  // Back-to-top button
+  const topBtn = document.createElement('button');
+  topBtn.className = 'back-to-top';
+  topBtn.setAttribute('aria-label', 'ページトップへ戻る');
+  topBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 12V2M2 6l5-5 5 5" stroke="currentColor" stroke-width="1.2"/></svg>';
+  document.body.appendChild(topBtn);
+  topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  window.addEventListener('scroll', () => {
+    topBtn.classList.toggle('visible', window.scrollY > 400);
   });
 
 })();
