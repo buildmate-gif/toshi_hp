@@ -76,52 +76,8 @@
   }
   .timeline-text strong { color: var(--navy); font-weight: 500; }
 
-  /* Archetype */
-  .archetype-section {
-    background: var(--navy); padding: 100px 48px;
-    position: relative; overflow: hidden;
-  }
-  .archetype-section::before {
-    content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 80% 50%, rgba(92,59,138,0.3) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .archetype-section .section-label { color: var(--gold); }
-  .archetype-section .section-label::before { background: var(--gold); }
-  .archetype-section .section-title { color: var(--ivory); }
-  .archetype-grid {
-    display: grid; grid-template-columns: repeat(3,1fr); gap: 24px;
-  }
-  .archetype-card {
-    border: 1px solid rgba(194,164,109,0.2);
-    padding: 40px 32px; position: relative;
-    transition: border-color 0.3s;
-  }
-  .archetype-card.main {
-    border-color: rgba(194,164,109,0.6);
-    background: rgba(194,164,109,0.05);
-  }
-  .archetype-card:hover { border-color: rgba(194,164,109,0.5); }
-  .archetype-badge {
-    font-size: 9px; letter-spacing: 0.25em;
-    color: var(--gold); border: 1px solid rgba(194,164,109,0.4);
-    display: inline-block; padding: 4px 12px; margin-bottom: 20px;
-    font-weight: 300;
-  }
-  .archetype-name {
-    font-family: var(--serif); font-size: 24px;
-    color: var(--ivory); letter-spacing: 0.06em;
-    margin-bottom: 16px; font-weight: 400;
-  }
-  .archetype-desc {
-    font-size: 13px; color: rgba(244,240,232,0.6);
-    line-height: 2; font-weight: 300;
-  }
-
   @media (max-width: 900px) {
     .about-grid { grid-template-columns: 1fr; gap: 48px; }
-    .archetype-grid { grid-template-columns: 1fr; }
-    .archetype-section { padding: 72px 24px; }
   }
 </style>
 </head>
@@ -215,34 +171,6 @@
     </div>
   </div>
 </section>
-
-<!-- ARCHETYPE -->
-<div class="archetype-section">
-  <div class="section-inner">
-    <div class="section-label reveal">BRAND ARCHETYPE</div>
-    <h2 class="section-title reveal reveal-delay-1">
-      ブランドアーキタイプ
-      <span class="section-title-en" style="color:rgba(244,240,232,0.4);">WHO I AM</span>
-    </h2>
-    <div class="archetype-grid">
-      <div class="archetype-card main reveal reveal-delay-1">
-        <div class="archetype-badge">MAIN</div>
-        <div class="archetype-name">Magician<br>魔法使い</div>
-        <div class="archetype-desc">変容の導き手。静けさと叡智をもって、人の内なる力を引き出し、本来の姿へと還る場を創る。神秘的だが怪しくない、高貴だが近寄りがたくない存在。</div>
-      </div>
-      <div class="archetype-card reveal reveal-delay-2">
-        <div class="archetype-badge">SUB</div>
-        <div class="archetype-name">Sage<br>賢者</div>
-        <div class="archetype-desc">深い知識と洞察で真実を照らし出す。StrengthsFinder・NLP・ブランドアーキタイプなど複数の手法を統合した叡智のアプローチ。</div>
-      </div>
-      <div class="archetype-card reveal reveal-delay-3">
-        <div class="archetype-badge">SUB</div>
-        <div class="archetype-name">Caregiver<br>世話役</div>
-        <div class="archetype-desc">深い共感と寄り添いで、相手の歩みを支える。動き続けてきた人の迷いと葛藤に、じっくりと耳を傾ける存在。</div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- CTA -->
 <div class="cta-band">
