@@ -4,88 +4,209 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>プロフィール | 小畑寿哉</title>
-<meta name="description" content="小畑寿哉のプロフィール。HR・組織変革・キャリア支援の領域で活動する変容の導き手。NLP・StrengthsFinder・ブランドアーキタイプを活用した独自のアプローチ。">
+<meta name="description" content="小畑寿哉のプロフィール。HR・組織変革・キャリア支援・ブランド言語化を横断し、変化の起点をつくる伴走支援を行っています。">
 <meta property="og:title" content="プロフィール | 小畑寿哉">
-<meta property="og:description" content="HR・組織変革・キャリア支援の領域で活動する変容の導き手。本来の自分へ還る静かな変容を届ける。">
+<meta property="og:description" content="専門領域、実績、アプローチ、これまでの歩みを通じて、小畑寿哉の支援スタイルをご紹介します。">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="common.css">
 <style>
-  .about-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 80px; align-items: start;
+  .intro-section {
+    background: var(--ivory-d);
+    padding: 100px 48px 88px;
+  }
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 72px;
+    align-items: start;
   }
   .about-bio {
-    font-size: 15px; line-height: 2.2;
-    color: var(--ink-l); font-weight: 300;
+    font-size: 15px;
+    line-height: 2.2;
+    color: var(--ink-l);
+    font-weight: 300;
   }
   .about-bio p + p { margin-top: 24px; }
   .about-bio strong { color: var(--navy); font-weight: 500; }
-  .about-cards { display: flex; flex-direction: column; gap: 20px; }
-  .about-card {
-    background: var(--ivory);
-    border: 1px solid rgba(194,164,109,0.25);
-    padding: 28px 32px; position: relative;
+  .profile-role {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 18px;
   }
-  .about-card::before {
-    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
-    width: 3px; background: linear-gradient(to bottom, var(--gold), transparent);
+  .keyword-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 32px;
   }
-  .about-card-label {
-    font-size: 9px; letter-spacing: 0.3em;
-    color: var(--gold); font-weight: 300; margin-bottom: 10px;
-  }
-  .about-card-text {
-    font-family: var(--serif); font-size: 16px;
-    color: var(--navy); line-height: 1.7; letter-spacing: 0.04em;
-  }
-  .about-keywords {
-    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px;
-  }
-  .about-keyword {
-    font-size: 11px; letter-spacing: 0.15em;
-    border: 1px solid rgba(92,59,138,0.3);
-    color: var(--purple); padding: 6px 16px; font-weight: 300;
+  .keyword-chip {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--navy);
+    border: 1px solid rgba(45,58,100,0.16);
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.35);
   }
 
-  /* Timeline */
-  .timeline { margin-top: 80px; }
-  .timeline-title {
-    font-family: var(--serif); font-size: 28px;
-    color: var(--navy); letter-spacing: 0.06em;
-    margin-bottom: 48px; font-weight: 400;
+  .trust-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
   }
-  .timeline-items { position: relative; padding-left: 32px; }
+  .trust-card {
+    background: var(--ivory);
+    border: 1px solid rgba(194,164,109,0.22);
+    padding: 26px 24px;
+    position: relative;
+  }
+  .trust-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+  .trust-label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .trust-copy {
+    font-size: 13px;
+    line-height: 2;
+    color: var(--ink-l);
+    font-weight: 300;
+  }
+
+  .expertise-section {
+    background: var(--ivory);
+    padding: 110px 48px;
+  }
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+  }
+  .expertise-card {
+    background: linear-gradient(180deg, rgba(244,240,232,0.96) 0%, rgba(234,228,214,0.92) 100%);
+    border: 1px solid rgba(194,164,109,0.2);
+    padding: 32px 28px;
+  }
+  .expertise-label {
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .expertise-title {
+    font-family: var(--serif);
+    font-size: 21px;
+    color: var(--navy);
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+  .expertise-copy {
+    font-size: 13px;
+    line-height: 2;
+    color: var(--ink-l);
+    font-weight: 300;
+  }
+
+  .timeline-section {
+    background: var(--ivory-d);
+    padding: 110px 48px;
+  }
+  .timeline {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .timeline-items {
+    position: relative;
+    padding-left: 32px;
+  }
   .timeline-items::before {
-    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
-    width: 1px; background: linear-gradient(to bottom, var(--gold), transparent);
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
   }
   .timeline-item {
-    position: relative; padding-bottom: 44px;
+    position: relative;
+    padding-bottom: 42px;
   }
   .timeline-item::before {
-    content: ''; position: absolute; left: -36px; top: 6px;
-    width: 8px; height: 8px; border-radius: 50%;
-    border: 1px solid var(--gold); background: var(--ivory);
+    content: '';
+    position: absolute;
+    left: -36px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    background: var(--ivory);
   }
   .timeline-year {
-    font-size: 10px; letter-spacing: 0.3em;
-    color: var(--gold); font-weight: 300; margin-bottom: 8px;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    color: var(--gold);
+    margin-bottom: 8px;
   }
   .timeline-text {
-    font-size: 15px; color: var(--ink-l);
-    line-height: 1.9; font-weight: 300;
+    font-size: 15px;
+    color: var(--ink-l);
+    line-height: 2;
+    font-weight: 300;
   }
   .timeline-text strong { color: var(--navy); font-weight: 500; }
 
+  .philosophy-section {
+    background: var(--ivory);
+    padding: 110px 48px;
+  }
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+  }
+  .philosophy-card {
+    background: var(--ivory-d);
+    border: 1px solid rgba(194,164,109,0.18);
+    padding: 30px 28px;
+  }
+  .philosophy-label {
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .philosophy-text {
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--navy);
+  }
+
   @media (max-width: 900px) {
-    .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    .intro-section,
+    .expertise-section,
+    .timeline-section,
+    .philosophy-section { padding-left: 24px; padding-right: 24px; }
+    .intro-grid,
+    .expertise-grid,
+    .philosophy-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 <nav id="main-nav"></nav>
 
-<!-- PAGE HERO -->
 <div class="page-hero above-fold">
   <div class="page-hero-inner">
     <div class="page-hero-label reveal">PROFILE</div>
@@ -94,91 +215,142 @@
   </div>
 </div>
 
-<!-- BIO -->
-<section style="background:var(--ivory-d);">
+<section class="intro-section">
   <div class="section-inner">
-    <div class="about-grid">
+    <div class="intro-grid">
       <div class="about-bio reveal">
+        <div class="profile-role">ORGANIZATIONAL TRANSFORMATION / COACHING / BRAND LANGUAGE</div>
         <p>
           <strong>小畑寿哉</strong>（おばた としや）。<br>
-          HR・組織変革・キャリア支援の領域で活動する変容の導き手。
+          HR・組織変革・キャリア支援・ブランド言語化を横断しながら、
+          人と組織の変化の起点をつくる伴走支援を行っています。
         </p>
         <p>
           1on1コーチング、組織変革コンサルティング、LP・PRコンテンツ制作、
-          EC・Webビジネス支援など、幅広い領域でクライアントの変容を支えてきた。
+          EC・Webビジネス伴走など、複数の領域で支援してきた経験をもとに、
+          課題を単発ではなく構造で捉え、必要な支援を組み立てることを大切にしています。
         </p>
         <p>
-          NLP、StrengthsFinder、Moon &amp; Trust、The ReBrandなど
-          複数の手法を掛け合わせた独自のアプローチで、
-          <strong>「本来の自分へ還る静かな変容」</strong>を届けている。
+          動き続けてきた人の中にある迷いや葛藤をほどき、
+          <strong>「本来の自分へ還る静かな変容」</strong>と、
+          次の役割へ進むための具体的な行動変化の両方を支えています。
         </p>
-        <p>
-          動き続けてきた人の中にある迷いや葛藤を、
-          じっくりほどき、次の役割への道筋を共に整える。
-        </p>
-        <div class="about-keywords">
-          <span class="about-keyword">NLP</span>
-          <span class="about-keyword">StrengthsFinder</span>
-          <span class="about-keyword">組織変革</span>
-          <span class="about-keyword">1on1コーチング</span>
-          <span class="about-keyword">キャリア変容</span>
-          <span class="about-keyword">HR</span>
-          <span class="about-keyword">Moon &amp; Trust</span>
-          <span class="about-keyword">The ReBrand</span>
-        </div>
-
-        <!-- Timeline -->
-        <div class="timeline reveal">
-          <div class="timeline-title">歩み</div>
-          <div class="timeline-items">
-            <div class="timeline-item">
-              <div class="timeline-year">HR・組織変革期</div>
-              <div class="timeline-text">企業のHR・組織設計・チームビルディングに従事。<strong>50名以上</strong>の変容を支援。</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year">コーチング本格始動</div>
-              <div class="timeline-text">NLP・StrengthsFinderを軸にした<strong>1on1コーチング</strong>を本格展開。管理職・経営者・転機の方を中心に支援。</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year">ブランディング・コンテンツ支援</div>
-              <div class="timeline-text">LP・PRコンテンツ制作、EC・Webビジネス伴走支援を開始。<strong>TheReBrand.inc・Moon &amp; Trust</strong>などと連携。</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year">現在</div>
-              <div class="timeline-text">株式会社 Office Maki.tv 役員として、変容の場を提供し続けている。</div>
-            </div>
-          </div>
+        <div class="keyword-row">
+          <span class="keyword-chip">NLP</span>
+          <span class="keyword-chip">StrengthsFinder</span>
+          <span class="keyword-chip">組織変革</span>
+          <span class="keyword-chip">1on1支援</span>
+          <span class="keyword-chip">キャリア変容</span>
+          <span class="keyword-chip">ブランド設計</span>
+          <span class="keyword-chip">Moon &amp; Trust</span>
+          <span class="keyword-chip">The ReBrand</span>
         </div>
       </div>
 
-      <div class="about-cards">
-        <div class="about-card reveal reveal-delay-1">
-          <div class="about-card-label">MISSION</div>
-          <div class="about-card-text">静かな変容を通じて、<br>本来の自分へ還るための場を届ける</div>
+      <div class="trust-panel reveal reveal-delay-2">
+        <div class="trust-card">
+          <div class="trust-label">TRACK RECORD</div>
+          <div class="trust-copy">10年にわたるHR・組織変革経験、50名以上のコーチング実績、3,000時間以上の対話の積み重ねがあります。</div>
         </div>
-        <div class="about-card reveal reveal-delay-2">
-          <div class="about-card-label">VISION</div>
-          <div class="about-card-text">誰もが自分の内なる力を信じ、<br>次のフェーズへと進める社会</div>
+        <div class="trust-card">
+          <div class="trust-label">SUPPORT RANGE</div>
+          <div class="trust-copy">経営者、管理職、変革推進者、個人事業主まで、個人と組織の両面から支援しています。</div>
         </div>
-        <div class="about-card reveal reveal-delay-3">
-          <div class="about-card-label">APPROACH</div>
-          <div class="about-card-text">叡智・深さ・品格をもって、<br>内なる力を引き出す対話</div>
-        </div>
-        <div class="about-card reveal reveal-delay-4">
-          <div class="about-card-label">KEYWORDS</div>
-          <div class="about-card-text">祓い・整い・還る<br>静かな変容 / 内なる力 / 品格</div>
+        <div class="trust-card">
+          <div class="trust-label">NETWORK</div>
+          <div class="trust-copy">株式会社 Office Maki.tv、TheReBrand.inc、Moon &amp; Trust などと連携しながら、支援テーマに応じた伴走を行っています。</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
+<section class="expertise-section">
+  <div class="section-inner">
+    <div class="section-label reveal">EXPERTISE</div>
+    <h2 class="section-title reveal reveal-delay-1">
+      専門領域
+      <span class="section-title-en">AREAS OF EXPERTISE</span>
+    </h2>
+    <div class="expertise-grid">
+      <article class="expertise-card reveal reveal-delay-1">
+        <div class="expertise-label">INDIVIDUAL</div>
+        <h3 class="expertise-title">1on1コーチングと<br>キャリア変容支援</h3>
+        <p class="expertise-copy">役割の迷い、強みの再整理、意思決定の言語化を通じて、次のフェーズへ進むための土台を整えます。</p>
+      </article>
+      <article class="expertise-card reveal reveal-delay-2">
+        <div class="expertise-label">ORGANIZATION</div>
+        <h3 class="expertise-title">組織変革と<br>対話設計支援</h3>
+        <p class="expertise-copy">1on1、チームビルディング、関係性の再設計を通じて、組織の空気と対話の質を改善します。</p>
+      </article>
+      <article class="expertise-card reveal reveal-delay-3">
+        <div class="expertise-label">BRAND</div>
+        <h3 class="expertise-title">ブランド言語化と<br>発信設計支援</h3>
+        <p class="expertise-copy">価値の棚卸しからLP・PR・発信導線まで整え、「伝わる表現」へ落とし込みます。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="timeline-section">
+  <div class="section-inner">
+    <div class="section-label reveal">JOURNEY</div>
+    <h2 class="section-title reveal reveal-delay-1">
+      歩み
+      <span class="section-title-en">PROFESSIONAL JOURNEY</span>
+    </h2>
+    <div class="timeline reveal reveal-delay-2">
+      <div class="timeline-items">
+        <div class="timeline-item">
+          <div class="timeline-year">HR・組織変革期</div>
+          <div class="timeline-text">企業のHR・組織設計・チームビルディングに従事し、<strong>50名以上</strong>の変容を支援。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">コーチング本格展開</div>
+          <div class="timeline-text">NLP・StrengthsFinderを軸にした<strong>1on1コーチング</strong>を本格化。管理職・経営者・転機の方を中心に伴走。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">ブランド・コンテンツ支援へ拡張</div>
+          <div class="timeline-text">LP・PRコンテンツ制作、EC・Webビジネス伴走支援を開始し、<strong>TheReBrand.inc・Moon &amp; Trust</strong> などと連携。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">現在</div>
+          <div class="timeline-text"><strong>株式会社 Office Maki.tv 役員</strong>として、個人と組織の変化を支える場づくりを続けている。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy-section">
+  <div class="section-inner">
+    <div class="section-label reveal">PHILOSOPHY</div>
+    <h2 class="section-title reveal reveal-delay-1">
+      大切にしていること
+      <span class="section-title-en">MISSION / VISION / APPROACH</span>
+    </h2>
+    <div class="philosophy-grid">
+      <article class="philosophy-card reveal reveal-delay-1">
+        <div class="philosophy-label">MISSION</div>
+        <div class="philosophy-text">静かな変容を通じて、本来の自分へ還るための場を届ける</div>
+      </article>
+      <article class="philosophy-card reveal reveal-delay-2">
+        <div class="philosophy-label">VISION</div>
+        <div class="philosophy-text">誰もが自分の内なる力を信じ、次のフェーズへと進める社会</div>
+      </article>
+      <article class="philosophy-card reveal reveal-delay-3">
+        <div class="philosophy-label">APPROACH</div>
+        <div class="philosophy-text">叡智・深さ・品格をもって、内なる力を引き出す対話</div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <div class="cta-band">
   <div class="cta-band-inner">
     <div class="cta-band-label reveal">NEXT</div>
     <h2 class="cta-band-title reveal reveal-delay-1">サービスを見る</h2>
-    <p class="cta-band-sub reveal reveal-delay-2">小畑寿哉が提供する6つのサービスをご覧ください。</p>
+    <p class="cta-band-sub reveal reveal-delay-2">課題別に整理した支援内容から、いま必要な伴走の形をご確認いただけます。</p>
     <a href="services.html" class="cta-band-btn reveal reveal-delay-3">
       サービス一覧へ <span class="btn-arrow"></span>
     </a>

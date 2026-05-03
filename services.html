@@ -4,52 +4,194 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>サービス | 小畑寿哉</title>
-<meta name="description" content="小畑寿哉の提供サービス。1on1コーチング、組織変革コンサルティング、LP・PRコンテンツ制作支援、キャリア変容支援、EC・Webビジネス伴走、研修・ワークショップ登壇。">
+<meta name="description" content="小畑寿哉の提供サービス。経営者・管理職・変革推進者に向けた課題別ソリューションとして、1on1コーチング、組織変革、ブランド言語化、キャリア支援、研修・伴走支援を提供。">
 <meta property="og:title" content="サービス | 小畑寿哉">
-<meta property="og:description" content="6つの支援領域 — コーチング・組織変革・ブランディング・キャリア支援・Webビジネス・研修登壇。">
+<meta property="og:description" content="課題別に整理した支援内容と、個人・組織・発信を横断する伴走支援の全体像をご紹介します。">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="common.css">
 <style>
-  .services-grid {
-    display: grid; grid-template-columns: repeat(3,1fr); gap: 28px;
+  .lead-section {
+    background: var(--ivory);
+    padding: 96px 48px 56px;
   }
-  .service-card {
-    background: var(--ivory-d); padding: 44px 36px;
-    position: relative; overflow: hidden;
+  .lead-copy {
+    max-width: 780px;
+    font-size: 15px;
+    line-height: 2.1;
+    color: var(--ink-l);
+    font-weight: 300;
+  }
+
+  .solutions-section {
+    background: var(--ivory);
+    padding: 24px 48px 110px;
+  }
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .solution-card {
+    background: var(--ivory-d);
+    padding: 38px 34px;
+    position: relative;
+    overflow: hidden;
     transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
   }
-  .service-card::after {
-    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-    height: 3px; background: linear-gradient(to right, var(--gold), transparent);
-    transform: scaleX(0); transform-origin: left;
+  .solution-card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--gold), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
     transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
   }
-  .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(45,58,100,0.12); }
-  .service-card:hover::after { transform: scaleX(1); }
-  .service-number {
-    font-size: 11px; letter-spacing: 0.2em;
-    color: var(--gold); font-weight: 300; margin-bottom: 24px;
+  .solution-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(45,58,100,0.12);
   }
-  .service-icon { width: 44px; height: 44px; margin-bottom: 20px; color: var(--navy); }
-  .service-title {
-    font-family: var(--serif); font-size: 20px;
-    font-weight: 400; color: var(--navy);
-    letter-spacing: 0.06em; line-height: 1.5; margin-bottom: 16px;
+  .solution-card:hover::after { transform: scaleX(1); }
+  .solution-number {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 18px;
   }
-  .service-desc { font-size: 13px; color: var(--ink-l); line-height: 2; font-weight: 300; }
+  .solution-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--navy);
+    margin-bottom: 18px;
+  }
+  .solution-copy,
+  .solution-line {
+    font-size: 13px;
+    line-height: 2;
+    color: var(--ink-l);
+    font-weight: 300;
+  }
+  .solution-line { margin-top: 12px; }
+  .solution-line strong {
+    color: var(--navy);
+    font-weight: 500;
+    margin-right: 6px;
+  }
+  .solution-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+  }
   .service-tag {
-    display: inline-block; font-size: 9px; letter-spacing: 0.2em;
-    color: var(--gold); border: 1px solid rgba(194,164,109,0.4);
-    padding: 4px 12px; margin-top: 24px; font-weight: 300;
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    border: 1px solid rgba(194,164,109,0.4);
+    padding: 4px 12px;
+    font-weight: 300;
   }
-  .service-detail {
-    margin-top: 20px; padding-top: 20px;
-    border-top: 1px solid rgba(194,164,109,0.15);
-    font-size: 12px; color: var(--ink-l);
-    line-height: 1.9; font-weight: 300;
+
+  .menu-section {
+    background: var(--ivory-d);
+    padding: 110px 48px;
   }
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .menu-card {
+    background: var(--ivory);
+    border: 1px solid rgba(194,164,109,0.22);
+    padding: 30px 30px 28px;
+  }
+  .menu-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+  .menu-title {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--navy);
+    line-height: 1.5;
+  }
+  .menu-code {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+  }
+  .menu-desc {
+    font-size: 13px;
+    line-height: 2;
+    color: var(--ink-l);
+    font-weight: 300;
+    margin-bottom: 14px;
+  }
+  .menu-fit {
+    font-size: 12px;
+    line-height: 1.95;
+    color: var(--ink-l);
+    font-weight: 300;
+    padding-top: 14px;
+    border-top: 1px solid rgba(45,58,100,0.08);
+  }
+  .menu-fit strong {
+    color: var(--navy);
+    font-weight: 500;
+    margin-right: 6px;
+  }
+
+  .flow-section {
+    background: var(--ivory);
+    padding: 110px 48px;
+  }
+  .flow-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .flow-card {
+    border: 1px solid rgba(194,164,109,0.24);
+    padding: 30px 28px;
+    background: linear-gradient(180deg, rgba(244,240,232,0.96) 0%, rgba(244,240,232,0.82) 100%);
+  }
+  .flow-step {
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .flow-title {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--navy);
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+  .flow-copy {
+    font-size: 13px;
+    line-height: 2;
+    color: var(--ink-l);
+    font-weight: 300;
+  }
+
   @media (max-width: 900px) {
-    .services-grid { grid-template-columns: 1fr; }
+    .lead-section,
+    .solutions-section,
+    .menu-section,
+    .flow-section { padding-left: 24px; padding-right: 24px; }
+    .solutions-grid,
+    .menu-grid,
+    .flow-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -60,90 +202,153 @@
   <div class="page-hero-inner">
     <div class="page-hero-label reveal">SERVICE</div>
     <h1 class="page-hero-title reveal reveal-delay-1">提供サービス</h1>
-    <div class="page-hero-en reveal reveal-delay-2">WHAT I OFFER</div>
+    <div class="page-hero-en reveal reveal-delay-2">HOW I SUPPORT</div>
   </div>
 </div>
 
-<section style="background:var(--ivory);">
+<section class="lead-section">
   <div class="section-inner">
-    <div class="section-label reveal">ALL SERVICES</div>
+    <div class="section-label reveal">OVERVIEW</div>
     <h2 class="section-title reveal reveal-delay-1">
-      6つの支援領域
+      課題から逆算して、必要な支援を組み立てる
+      <span class="section-title-en">SOLUTION-BASED SUPPORT</span>
+    </h2>
+    <p class="lead-copy reveal reveal-delay-2">
+      提供しているのは単なるサービス一覧ではなく、経営者・管理職・変革推進者が抱える
+      「役割の迷い」「組織の停滞」「価値の伝わりにくさ」といった課題に対する伴走支援です。
+      個人・組織・発信の3つの視点を横断しながら、必要な支援を設計します。
+    </p>
+  </div>
+</section>
+
+<section class="solutions-section">
+  <div class="section-inner">
+    <div class="section-label reveal">SOLUTIONS</div>
+    <h2 class="section-title reveal reveal-delay-1">
+      課題別ソリューション
+      <span class="section-title-en">HOW I HELP</span>
+    </h2>
+    <div class="solutions-grid">
+      <article class="solution-card reveal reveal-delay-1">
+        <div class="solution-number">SOLUTION 01</div>
+        <h3 class="solution-title">役割が広がるほど、<br>自分の軸が見えにくくなっている</h3>
+        <p class="solution-copy">責任や期待が増える一方で、自分が本当に進みたい方向が曖昧になっている方へ。</p>
+        <p class="solution-line"><strong>支援内容</strong>1on1コーチング / 強み整理 / 意思決定の言語化</p>
+        <p class="solution-line"><strong>得られる変化</strong>迷いを整理し、自分の言葉で次の一歩を選べる状態へ</p>
+        <div class="solution-tags">
+          <span class="service-tag">COACHING</span>
+          <span class="service-tag">CAREER</span>
+        </div>
+      </article>
+      <article class="solution-card reveal reveal-delay-2">
+        <div class="solution-number">SOLUTION 02</div>
+        <h3 class="solution-title">組織の空気や対話の質を、<br>根本から変えていきたい</h3>
+        <p class="solution-copy">関係性の詰まりや停滞感を解消し、現場に変化が起きる土台をつくりたい組織へ。</p>
+        <p class="solution-line"><strong>支援内容</strong>組織変革支援 / 1on1設計 / 研修 / チームビルディング</p>
+        <p class="solution-line"><strong>得られる変化</strong>メンバーが自分の言葉で動き、対話が機能する組織へ</p>
+        <div class="solution-tags">
+          <span class="service-tag">ORGANIZATION</span>
+          <span class="service-tag">TRAINING</span>
+        </div>
+      </article>
+      <article class="solution-card reveal reveal-delay-3">
+        <div class="solution-number">SOLUTION 03</div>
+        <h3 class="solution-title">価値はあるのに、<br>言葉や発信の形にできていない</h3>
+        <p class="solution-copy">提供価値やブランドの本質を整理し、伝わる形へ再構成したい個人・事業者へ。</p>
+        <p class="solution-line"><strong>支援内容</strong>LP・PRコンテンツ制作 / ブランド言語化 / 発信設計 / Web伴走</p>
+        <p class="solution-line"><strong>得られる変化</strong>表現が整理され、「あなたに頼みたい」が起こる状態へ</p>
+        <div class="solution-tags">
+          <span class="service-tag">BRANDING</span>
+          <span class="service-tag">BUSINESS</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="menu-section">
+  <div class="section-inner">
+    <div class="section-label reveal">SUPPORT MENU</div>
+    <h2 class="section-title reveal reveal-delay-1">
+      提供している具体支援
       <span class="section-title-en">AREAS OF SUPPORT</span>
     </h2>
-    <div class="services-grid">
-      <div class="service-card reveal reveal-delay-1">
-        <div class="service-number">01</div>
-        <svg class="service-icon" viewBox="0 0 44 44" fill="none">
-          <circle cx="22" cy="22" r="20" stroke="currentColor" stroke-width="1" opacity="0.4"/>
-          <path d="M14 22 C14 17 18 14 22 14 C26 14 30 17 30 22 C30 27 26 30 22 30" stroke="currentColor" stroke-width="1.2" fill="none"/>
-          <circle cx="22" cy="22" r="4" fill="currentColor" opacity="0.5"/>
-          <path d="M22 30 L22 36" stroke="currentColor" stroke-width="1" opacity="0.4"/>
-        </svg>
-        <div class="service-title">1on1コーチング<br>個別セッション</div>
-        <div class="service-desc">迷いや葛藤をほどき、本来の自分への道筋を共に整える個別セッション。</div>
-        <div class="service-detail">NLP・StrengthsFinder・ブランドアーキタイプを組み合わせた独自アプローチ。深いところからの変容を支えます。</div>
-        <div class="service-tag">COACHING</div>
-      </div>
-      <div class="service-card reveal reveal-delay-2">
-        <div class="service-number">02</div>
-        <svg class="service-icon" viewBox="0 0 44 44" fill="none">
-          <rect x="6" y="10" width="32" height="24" rx="1" stroke="currentColor" stroke-width="1" opacity="0.4"/>
-          <path d="M14 20 L22 16 L30 20" stroke="currentColor" stroke-width="1.2" fill="none"/>
-          <path d="M14 26 L22 22 L30 26" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.5"/>
-        </svg>
-        <div class="service-title">組織変革<br>コンサルティング</div>
-        <div class="service-desc">HR・組織設計・チームビルディングを通じて、組織の内なる力を引き出します。</div>
-        <div class="service-detail">持続的な変容を実現するコンサルティング支援。4名〜50名規模の組織に対応。</div>
-        <div class="service-tag">ORGANIZATION</div>
-      </div>
-      <div class="service-card reveal reveal-delay-3">
-        <div class="service-number">03</div>
-        <svg class="service-icon" viewBox="0 0 44 44" fill="none">
-          <path d="M8 34 L8 18 L22 10 L36 18 L36 34" stroke="currentColor" stroke-width="1" opacity="0.4" fill="none"/>
-          <rect x="17" y="24" width="10" height="10" stroke="currentColor" stroke-width="1" fill="none" opacity="0.5"/>
-          <path d="M15 22 L22 18 L29 22" stroke="currentColor" stroke-width="1.2" fill="none"/>
-        </svg>
-        <div class="service-title">LP・PRコンテンツ<br>制作支援</div>
-        <div class="service-desc">ブランドの本質をことばにして届けるコンテンツ設計・制作サポート。</div>
-        <div class="service-detail">StrengthsFinderやブランドアーキタイプを活用した独自のアプローチで、あなたの価値を言語化します。</div>
-        <div class="service-tag">BRANDING</div>
-      </div>
-      <div class="service-card reveal reveal-delay-1">
-        <div class="service-number">04</div>
-        <svg class="service-icon" viewBox="0 0 44 44" fill="none">
-          <circle cx="14" cy="16" r="5" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-          <circle cx="30" cy="16" r="5" stroke="currentColor" stroke-width="1" opacity="0.3"/>
-          <circle cx="22" cy="30" r="5" stroke="currentColor" stroke-width="1" opacity="0.4"/>
-          <path d="M18 19 L20 25" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
-          <path d="M26 19 L24 25" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
-        </svg>
-        <div class="service-title">キャリア変容<br>支援プログラム</div>
-        <div class="service-desc">次のフェーズへ進もうとする方向けの、継続的サポートプログラム。</div>
-        <div class="service-detail">管理職・経営者・転機を迎えた方を対象に、深い対話と内省を軸にした複数回セッション型プログラム。</div>
-        <div class="service-tag">CAREER</div>
-      </div>
-      <div class="service-card reveal reveal-delay-2">
-        <div class="service-number">05</div>
-        <svg class="service-icon" viewBox="0 0 44 44" fill="none">
-          <path d="M10 32 L10 20 C10 15 14 12 22 12 C30 12 34 15 34 20 L34 32" stroke="currentColor" stroke-width="1" opacity="0.4" fill="none"/>
-          <path d="M16 22 L20 26 L28 18" stroke="currentColor" stroke-width="1.5" fill="none"/>
-        </svg>
-        <div class="service-title">EC・Webビジネス<br>伴走支援</div>
-        <div class="service-desc">立ち上げから成長フェーズまで、包括的な伴走支援。</div>
-        <div class="service-detail">PDCA設計から実装まで一貫してサポート。EC・Webの視点を加えたビジネス戦略を共に設計します。</div>
-        <div class="service-tag">BUSINESS</div>
-      </div>
-      <div class="service-card reveal reveal-delay-3">
-        <div class="service-number">06</div>
-        <svg class="service-icon" viewBox="0 0 44 44" fill="none">
-          <path d="M22 8 L26 18 L38 18 L28 25 L32 36 L22 29 L12 36 L16 25 L6 18 L18 18 Z" stroke="currentColor" stroke-width="1" opacity="0.4" fill="none"/>
-        </svg>
-        <div class="service-title">研修・ワーク<br>ショップ登壇</div>
-        <div class="service-desc">企業研修・チームワークショップへの登壇。</div>
-        <div class="service-detail">StrengthsFinder・NLP・ブランドアーキタイプなど、実践的なプログラムを提供。参加者の内なる力を引き出します。</div>
-        <div class="service-tag">TRAINING</div>
-      </div>
+    <div class="menu-grid">
+      <article class="menu-card reveal reveal-delay-1">
+        <div class="menu-head">
+          <h3 class="menu-title">1on1コーチング・個別セッション</h3>
+          <div class="menu-code">01</div>
+        </div>
+        <p class="menu-desc">違和感や迷いをほどきながら、役割・意思決定・強みを整理する個別支援です。</p>
+        <p class="menu-fit"><strong>こんな方に</strong>次の役割への移行期にいる方、判断軸を整えたい方</p>
+      </article>
+      <article class="menu-card reveal reveal-delay-2">
+        <div class="menu-head">
+          <h3 class="menu-title">組織変革コンサルティング</h3>
+          <div class="menu-code">02</div>
+        </div>
+        <p class="menu-desc">1on1や対話の設計を起点に、組織の空気・関係性・意思疎通の質を改善します。</p>
+        <p class="menu-fit"><strong>こんな方に</strong>停滞感のあるチームを変えたい経営層・人事・管理職</p>
+      </article>
+      <article class="menu-card reveal reveal-delay-3">
+        <div class="menu-head">
+          <h3 class="menu-title">LP・PRコンテンツ制作支援</h3>
+          <div class="menu-code">03</div>
+        </div>
+        <p class="menu-desc">ブランドの本質を言語化し、伝わる構成・表現・メッセージへ落とし込みます。</p>
+        <p class="menu-fit"><strong>こんな方に</strong>価値はあるのに伝わり方に課題を感じている方</p>
+      </article>
+      <article class="menu-card reveal reveal-delay-4">
+        <div class="menu-head">
+          <h3 class="menu-title">キャリア変容支援プログラム</h3>
+          <div class="menu-code">04</div>
+        </div>
+        <p class="menu-desc">転機や拡張フェーズにある方へ、複数回の対話で継続的な変化を支えます。</p>
+        <p class="menu-fit"><strong>こんな方に</strong>キャリアの転換点で立ち止まり、整理したい方</p>
+      </article>
+      <article class="menu-card reveal reveal-delay-1">
+        <div class="menu-head">
+          <h3 class="menu-title">EC・Webビジネス伴走支援</h3>
+          <div class="menu-code">05</div>
+        </div>
+        <p class="menu-desc">企画・導線・運用の観点から、事業成長に向けた改善や実装の流れを伴走します。</p>
+        <p class="menu-fit"><strong>こんな方に</strong>立ち上げ後の伸び悩みや整理不足を感じている事業者</p>
+      </article>
+      <article class="menu-card reveal reveal-delay-2">
+        <div class="menu-head">
+          <h3 class="menu-title">研修・ワークショップ登壇</h3>
+          <div class="menu-code">06</div>
+        </div>
+        <p class="menu-desc">対話・強み・組織変化をテーマに、実務に接続する研修やワークショップを実施します。</p>
+        <p class="menu-fit"><strong>こんな方に</strong>現場で活きる学びを取り入れたい企業・チーム</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="flow-section">
+  <div class="section-inner">
+    <div class="section-label reveal">FLOW</div>
+    <h2 class="section-title reveal reveal-delay-1">
+      ご相談から支援開始まで
+      <span class="section-title-en">SUPPORT FLOW</span>
+    </h2>
+    <div class="flow-grid">
+      <article class="flow-card reveal reveal-delay-1">
+        <div class="flow-step">STEP 01</div>
+        <h3 class="flow-title">初回相談で、<br>課題の輪郭を整理する</h3>
+        <p class="flow-copy">いま何が起きているのか、何を変えたいのかを言葉にし、支援の方向性を見立てます。</p>
+      </article>
+      <article class="flow-card reveal reveal-delay-2">
+        <div class="flow-step">STEP 02</div>
+        <h3 class="flow-title">目的に応じて、<br>支援設計を組み立てる</h3>
+        <p class="flow-copy">個別対話、組織支援、言語化支援などを組み合わせ、必要な支援の形を提案します。</p>
+      </article>
+      <article class="flow-card reveal reveal-delay-3">
+        <div class="flow-step">STEP 03</div>
+        <h3 class="flow-title">変化が定着するまで、<br>伴走する</h3>
+        <p class="flow-copy">単発で終わらず、行動変化や関係性の変化が実感できるところまで継続的に支えます。</p>
+      </article>
     </div>
   </div>
 </section>
@@ -152,7 +357,7 @@
   <div class="cta-band-inner">
     <div class="cta-band-label reveal">CONTACT</div>
     <h2 class="cta-band-title reveal reveal-delay-1">まずは、話してみませんか。</h2>
-    <p class="cta-band-sub reveal reveal-delay-2">無料の初回相談セッションをご用意しています。</p>
+    <p class="cta-band-sub reveal reveal-delay-2">組織課題の整理、支援テーマの壁打ち、導入前のご相談から承っています。</p>
     <a href="contact.html" class="cta-band-btn reveal reveal-delay-3">
       無料相談・体験セッションへ <span class="btn-arrow"></span>
     </a>
