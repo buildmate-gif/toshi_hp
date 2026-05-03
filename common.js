@@ -16,9 +16,9 @@
   ];
 
   const logoSVG = `<svg class="nav-logo-mark" viewBox="0 0 40 40" fill="none">
-    <circle cx="20" cy="20" r="18" stroke="var(--gold)" stroke-width="1"/>
-    <path class="logo-path-main" d="M10 26 Q15 14 20 18 Q25 22 30 14" stroke-width="1.2" fill="none"/>
-    <path class="logo-path-sub" d="M8 30 Q14 22 20 26 Q26 30 32 22" stroke-width="0.8" fill="none" opacity="0.6"/>
+    <circle cx="20" cy="20" r="18" stroke="#C2A46D" stroke-width="1"/>
+    <path d="M10 26 Q15 14 20 18 Q25 22 30 14" stroke="#2D3A64" stroke-width="1.2" fill="none"/>
+    <path d="M8 30 Q14 22 20 26 Q26 30 32 22" stroke="#5C3B8A" stroke-width="0.8" fill="none" opacity="0.6"/>
   </svg>`;
 
   // Build nav links HTML
