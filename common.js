@@ -16,18 +16,9 @@
   ];
 
   const logoSVG = `<svg class="nav-logo-mark" viewBox="0 0 40 40" fill="none">
-    <!-- ゴールド外輪 -->
-    <circle cx="20" cy="20" r="17" stroke="#C2A46D" stroke-width="0.9"/>
-    <!-- 勾玉1（ネイビー太弧）右側を回り込む -->
-    <path d="M 22 7 C 32 10 34 20 30 27 C 27 32 20 34 16 31"
-          stroke="#2D3A64" stroke-width="3.2" stroke-linecap="round" fill="none"/>
-    <!-- 勾玉2（ゴールド細弧）左側を逆方向に回り込む -->
-    <path d="M 18 33 C 8 30 6 20 10 13 C 13 8 20 6 24 9"
-          stroke="#C2A46D" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.85"/>
-    <!-- 勾玉1の頭部（ネイビー丸） -->
-    <circle cx="22" cy="7" r="2.8" fill="#2D3A64"/>
-    <!-- 勾玉2の頭部（ゴールド丸） -->
-    <circle cx="18" cy="33" r="2" fill="#C2A46D"/>
+    <circle cx="20" cy="20" r="18" stroke="var(--gold)" stroke-width="1"/>
+    <path class="logo-path-main" d="M10 26 Q15 14 20 18 Q25 22 30 14" stroke-width="1.2" fill="none"/>
+    <path class="logo-path-sub" d="M8 30 Q14 22 20 26 Q26 30 32 22" stroke-width="0.8" fill="none" opacity="0.6"/>
   </svg>`;
 
   // Build nav links HTML
