@@ -20,34 +20,72 @@
     justify-content: flex-start;
     overflow: hidden;
     background: var(--ivory);
+    isolation: isolate;
   }
   .hero-bg { position: absolute; inset: 0; z-index: 0; }
+  .hero-image-wrap {
+    position: absolute;
+    inset: -6%;
+    transform: none;
+    contain: paint;
+  }
+  .hero-image-layer {
+    position: absolute;
+    inset: 0;
+    background-image: url('assets/parallax-hero-bg.svg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+    filter: saturate(0.92) contrast(1.02);
+    transform: scale(1.04);
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+      linear-gradient(90deg, rgba(244,240,232,0.94) 0%, rgba(244,240,232,0.84) 34%, rgba(244,240,232,0.5) 56%, rgba(244,240,232,0.18) 100%),
+      linear-gradient(180deg, rgba(244,240,232,0.08) 0%, rgba(244,240,232,0.24) 100%);
+  }
   .hero-shape-1 {
     position: absolute; right: -10%; top: -10%;
     width: 55%; height: 80%;
     background: var(--navy);
     border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%;
     opacity: 0.08;
+    transform: none;
+    contain: paint;
   }
   .hero-shape-2 {
     position: absolute; left: -5%; bottom: -10%;
     width: 40%; height: 60%;
     background: var(--purple);
     border-radius: 50% 40% 50% 60% / 40% 60% 40% 60%;
-    opacity: 0.06;
+    opacity: 0.065;
+    transform: none;
+    contain: paint;
   }
   .hero-mountain {
-    position: absolute; bottom: 0; right: 0;
+    position: absolute; bottom: -50px; right: 0;
     width: 52%; height: 55%;
-    z-index: 1; opacity: 0.18;
+    z-index: 1; opacity: 0.16;
+    transform: none;
+    contain: paint;
   }
   .hero-content {
     position: relative; z-index: 3;
     max-width: 1100px;
     margin: 0 auto;
     width: 100%;
-    padding: 120px 48px 80px;
+    padding: 112px 48px 56px;
     text-align: left;
+  }
+  .hero-shell {
+    display: block;
+    min-height: calc(100vh - 220px);
+  }
+  .hero-copy-block {
+    max-width: 520px;
   }
 
   .hero-title {
@@ -68,7 +106,7 @@
   }
   .hero-sub {
     font-size: 15px; color: var(--ink-l);
-    line-height: 2.1; margin-bottom: 64px;
+    line-height: 2.1; margin-bottom: 42px;
     font-weight: 300;
   }
   .hero-cta {
@@ -97,11 +135,148 @@
   .hero-scroll-line {
     width: 1px; height: 48px;
     background: linear-gradient(to bottom, var(--gold), transparent);
-    animation: scrollPulse 2s ease-in-out infinite;
+    opacity: 0.65;
   }
-  @keyframes scrollPulse {
-    0%,100% { opacity: 0.4; transform: scaleY(1); }
-    50% { opacity: 1; transform: scaleY(1.2); }
+  .trust-strip {
+    position: relative;
+    margin-top: -1px;
+    background: linear-gradient(180deg, rgba(234,228,214,0.72) 0%, rgba(244,240,232,0.96) 100%);
+    border-top: 1px solid rgba(194,164,109,0.18);
+    border-bottom: 1px solid rgba(45,58,100,0.08);
+    padding: 26px 48px 28px;
+    overflow: hidden;
+  }
+  .trust-strip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(74% 54% at 86% 16%, rgba(45,58,100,0.06) 0%, rgba(45,58,100,0) 56%),
+      linear-gradient(138deg, rgba(194,164,109,0.1) 0%, rgba(194,164,109,0) 28%),
+      url('assets/parallax-section-bg.svg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.14;
+    pointer-events: none;
+  }
+  .trust-strip-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+  .trust-strip-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    font-weight: 300;
+    padding-top: 8px;
+  }
+  .trust-strip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .trust-strip-chip {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--navy);
+    background: rgba(255,255,255,0.42);
+    border: 1px solid rgba(45,58,100,0.12);
+    padding: 9px 16px;
+  }
+  .focus-section,
+  .message-section,
+  .services-section,
+  .profile-section,
+  .cases-section {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .focus-section::before,
+  .services-section::before,
+  .profile-section::before,
+  .cases-section::before {
+    content: '';
+    position: absolute;
+    inset: -8%;
+    background-image:
+      radial-gradient(70% 52% at 86% 14%, rgba(45,58,100,0.08) 0%, rgba(45,58,100,0) 54%),
+      radial-gradient(56% 40% at 14% 86%, rgba(92,59,138,0.06) 0%, rgba(92,59,138,0) 58%),
+      linear-gradient(138deg, rgba(194,164,109,0.12) 0%, rgba(194,164,109,0) 24%),
+      url('assets/parallax-section-bg.svg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.22;
+    transform: none;
+    z-index: 0;
+    pointer-events: none;
+    contain: paint;
+  }
+  .focus-section::after,
+  .services-section::after,
+  .profile-section::after,
+  .cases-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .focus-section::after {
+    background: linear-gradient(180deg, rgba(244,240,232,0.8) 0%, rgba(244,240,232,0.92) 100%);
+  }
+  .services-section::after {
+    background: linear-gradient(180deg, rgba(244,240,232,0.88) 0%, rgba(244,240,232,0.96) 100%);
+  }
+  .profile-section::after {
+    background: linear-gradient(180deg, rgba(244,240,232,0.84) 0%, rgba(244,240,232,0.95) 100%);
+  }
+  .cases-section::after {
+    background: linear-gradient(180deg, rgba(234,228,214,0.82) 0%, rgba(234,228,214,0.94) 100%);
+  }
+  .focus-section .section-inner,
+  .message-section .section-inner,
+  .services-section .section-inner,
+  .profile-section .section-inner,
+  .cases-section .section-inner,
+  .stats-section .section-inner {
+    position: relative;
+    z-index: 1;
+  }
+  .focus-section .section-inner::before,
+  .message-section .section-inner::before,
+  .services-section .section-inner::before,
+  .profile-section .section-inner::before,
+  .cases-section .section-inner::before {
+    content: '';
+    position: absolute;
+    top: -160px;
+    left: -160px;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(circle at 42% 42%,
+      rgba(194,164,109,0.20) 0%,
+      rgba(45,58,100,0.12) 38%,
+      transparent 68%
+    );
+    opacity: 0.75;
+  }
+  .focus-section .section-inner > *,
+  .message-section .section-inner > *,
+  .services-section .section-inner > *,
+  .profile-section .section-inner > *,
+  .cases-section .section-inner > * {
+    position: relative;
+    z-index: 1;
   }
 
   /* Message Section (from message.html) */
@@ -111,10 +286,29 @@
   }
   .message-section::before {
     content: ''; position: absolute;
-    top: -100px; right: -100px;
-    width: 500px; height: 500px; border-radius: 50%;
+    top: -200px; right: -200px;
+    width: 700px; height: 700px; border-radius: 50%;
     background: radial-gradient(circle, rgba(92,59,138,0.06) 0%, transparent 70%);
     pointer-events: none;
+    transform: none;
+    z-index: 0;
+  }
+  .message-section::after {
+    content: '';
+    position: absolute;
+    inset: -10%;
+    background-image:
+      radial-gradient(72% 48% at 84% 16%, rgba(45,58,100,0.08) 0%, rgba(45,58,100,0) 58%),
+      radial-gradient(54% 40% at 16% 86%, rgba(92,59,138,0.08) 0%, rgba(92,59,138,0) 58%),
+      linear-gradient(180deg, rgba(234,228,214,0.72) 0%, rgba(234,228,214,0.9) 100%),
+      url('assets/parallax-section-bg.svg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.28;
+    transform: none;
+    z-index: 0;
+    pointer-events: none;
+    contain: paint;
   }
   .message-inner { max-width: 820px; margin: 0 auto; text-align: center; }
   .big-quote {
@@ -185,67 +379,98 @@
   /* Stats Section (from results.html) */
   .stats-section { background: var(--navy); padding: 120px 48px; position: relative; overflow: hidden; }
   .stats-section::before {
-    content: ''; position: absolute; inset: 0;
+    content: ''; position: absolute; inset: -200px -200px -200px -200px;
     background: radial-gradient(ellipse at right, rgba(92,59,138,0.3) 0%, transparent 70%);
     pointer-events: none;
+    transform: none;
+  }
+  .stats-section::after {
+    content: '';
+    position: absolute;
+    inset: -8%;
+    background-image:
+      radial-gradient(86% 58% at 82% 10%, rgba(244,240,232,0.08) 0%, rgba(244,240,232,0) 52%),
+      radial-gradient(70% 54% at 88% 100%, rgba(92,59,138,0.18) 0%, rgba(92,59,138,0) 58%),
+      linear-gradient(180deg, rgba(45,58,100,0.76) 0%, rgba(45,58,100,0.92) 100%),
+      url('assets/parallax-section-bg.svg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    transform: none;
+    z-index: 0;
+    pointer-events: none;
+    contain: paint;
   }
   .stats-section .section-label { color: var(--gold); }
   .stats-section .section-label::before { background: var(--gold); }
   .stats-section .section-title { color: var(--ivory); }
   .stats-grid {
-    display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; margin-bottom: 72px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    margin-bottom: 52px;
+    border-top: 1px solid rgba(194,164,109,0.22);
+    border-bottom: 1px solid rgba(194,164,109,0.22);
   }
   .stat-item {
-    background: rgba(244,240,232,0.05); padding: 44px 32px;
-    border: 1px solid rgba(194,164,109,0.15); text-align: center;
+    background: rgba(244,240,232,0.04);
+    padding: 54px 28px 50px;
+    border-right: 1px solid rgba(194,164,109,0.18);
+    text-align: left;
     transition: background 0.3s;
   }
+  .stat-item:last-child { border-right: none; }
   .stat-item:hover { background: rgba(244,240,232,0.09); }
   .stat-number {
-    font-family: var(--serif); font-size: 48px;
+    font-family: var(--serif); font-size: 62px;
     color: var(--gold); font-weight: 400;
-    line-height: 1; margin-bottom: 12px; letter-spacing: 0.04em;
+    line-height: 0.95; margin-bottom: 18px; letter-spacing: 0.04em;
   }
   .stat-number sub { font-size: 22px; vertical-align: baseline; }
-  .stat-label { font-size: 12px; color: rgba(244,240,232,0.7); letter-spacing: 0.12em; font-weight: 300; }
-  .clients-row {
-    display: flex; flex-wrap: wrap; gap: 14px; align-items: center;
-  }
-  .clients-label {
-    font-size: 10px; letter-spacing: 0.3em;
-    color: var(--gold); font-weight: 300; width: 100%; margin-bottom: 4px;
-  }
-  .client-chip {
-    font-size: 11px; letter-spacing: 0.1em;
-    color: rgba(244,240,232,0.65);
-    border: 1px solid rgba(244,240,232,0.15);
-    padding: 7px 16px; font-weight: 300;
-    transition: border-color 0.2s, color 0.2s;
+  .stat-label {
+    font-size: 11px;
+    color: rgba(244,240,232,0.74);
+    letter-spacing: 0.16em;
+    font-weight: 300;
+    line-height: 2;
   }
 
   .focus-section { background: var(--ivory); padding: 120px 48px; }
   .focus-grid {
-    display: grid; grid-template-columns: repeat(3,1fr); gap: 28px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
   }
   .focus-card {
-    background: linear-gradient(180deg, rgba(244,240,232,0.96) 0%, rgba(234,228,214,0.92) 100%);
-    border: 1px solid rgba(194,164,109,0.22);
-    padding: 36px 32px;
+    position: relative;
+    background: linear-gradient(180deg, rgba(255,255,255,0.62) 0%, rgba(234,228,214,0.88) 100%);
+    border: 1px solid rgba(194,164,109,0.18);
+    padding: 44px 36px 40px;
     min-height: 100%;
+    box-shadow: 0 20px 48px rgba(45,58,100,0.08);
+  }
+  .focus-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 36px;
+    right: 36px;
+    height: 1px;
+    background: linear-gradient(to right, var(--gold), rgba(194,164,109,0.12));
   }
   .focus-kicker {
     font-size: 10px; letter-spacing: 0.24em;
-    color: var(--gold); margin-bottom: 16px;
+    color: var(--gold); margin-bottom: 22px;
   }
   .focus-title {
     font-family: var(--serif);
     font-size: 22px; line-height: 1.5;
-    color: var(--navy); margin-bottom: 16px;
+    color: var(--navy); margin-bottom: 20px;
   }
   .focus-copy {
     font-size: 14px; line-height: 2;
     color: var(--ink-l); font-weight: 300;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
   }
   .focus-list {
     display: flex; flex-wrap: wrap; gap: 10px;
@@ -265,8 +490,11 @@
     margin-bottom: 48px;
   }
   .solution-card {
-    background: var(--ivory-d); padding: 40px 36px;
-    position: relative; overflow: hidden;
+    background: linear-gradient(180deg, rgba(234,228,214,0.92) 0%, rgba(244,240,232,0.9) 100%);
+    padding: 42px 36px 38px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(194,164,109,0.18);
     transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
   }
   .solution-card::after {
@@ -275,22 +503,32 @@
     transform: scaleX(0); transform-origin: left;
     transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
   }
+  .solution-card::before {
+    content: '';
+    position: absolute;
+    inset: 20px 20px auto;
+    height: 1px;
+    background: rgba(45,58,100,0.08);
+  }
   .solution-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(45,58,100,0.12); }
   .solution-card:hover::after { transform: scaleX(1); }
   .solution-problem {
     font-size: 11px; letter-spacing: 0.18em;
-    color: var(--gold); margin-bottom: 18px;
+    color: var(--gold); margin-bottom: 26px;
   }
   .solution-title {
     font-family: var(--serif); font-size: 22px;
     line-height: 1.55; color: var(--navy);
-    margin-bottom: 18px;
+    margin-bottom: 24px;
   }
   .solution-point {
     font-size: 13px; line-height: 2;
     color: var(--ink-l); font-weight: 300;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(45,58,100,0.08);
   }
+  .solution-point:first-of-type { border-top: none; padding-top: 0; }
   .solution-point strong {
     color: var(--navy); font-weight: 500;
     margin-right: 6px;
@@ -302,13 +540,24 @@
 
   .cases-section { background: var(--ivory-d); padding: 120px 48px; }
   .cases-grid {
-    display: grid; grid-template-columns: repeat(3,1fr); gap: 28px;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 28px;
   }
   .case-card {
     background: var(--ivory);
     border: 1px solid rgba(194,164,109,0.2);
     padding: 34px 30px;
     display: flex; flex-direction: column; gap: 18px;
+    box-shadow: 0 18px 44px rgba(45,58,100,0.08);
+  }
+  .case-card:first-child {
+    grid-column: span 6;
+    padding: 42px 38px 40px;
+  }
+  .case-card:nth-child(2),
+  .case-card:nth-child(3) {
+    grid-column: span 3;
   }
   .case-label {
     font-size: 10px; letter-spacing: 0.24em;
@@ -318,6 +567,10 @@
     font-family: var(--serif);
     font-size: 20px; line-height: 1.6;
     color: var(--navy);
+  }
+  .case-card:first-child .case-title {
+    font-size: 28px;
+    line-height: 1.55;
   }
   .case-meta {
     font-size: 12px; line-height: 1.9;
@@ -405,9 +658,62 @@
   }
 
   @media (max-width: 900px) {
-    .hero-content { padding: 100px 24px 72px; }
+    .hero-content { padding: 100px 24px 48px; }
+    .hero-image-wrap { inset: -10%; transform: none; }
+    .hero-shell { min-height: auto; }
+    .hero-copy-block { max-width: none; }
+    .trust-strip { padding: 22px 24px; }
+    .trust-strip-inner { grid-template-columns: 1fr; gap: 16px; }
+    .hero-overlay {
+      background:
+        linear-gradient(180deg, rgba(244,240,232,0.88) 0%, rgba(244,240,232,0.7) 44%, rgba(244,240,232,0.42) 100%),
+        linear-gradient(90deg, rgba(244,240,232,0.86) 0%, rgba(244,240,232,0.34) 100%);
+    }
+    .focus-section::before,
+    .services-section::before,
+    .profile-section::before,
+    .cases-section::before,
+    .message-section::after,
+    .stats-section::after {
+      inset: -12%;
+      opacity: 0.16;
+      transform: none;
+    }
     .message-section, .services-section, .stats-section, .focus-section, .cases-section, .testimonials-section, .profile-section { padding: 72px 24px; }
-    .services-grid, .stats-grid, .focus-grid, .cases-grid, .testimonials-grid, .about-grid { grid-template-columns: 1fr; }
+    .services-grid, .stats-grid, .focus-grid, .testimonials-grid, .about-grid { grid-template-columns: 1fr; }
+    .stat-item { padding: 34px 22px 30px; border-right: none; border-bottom: 1px solid rgba(194,164,109,0.18); }
+    .stat-item:last-child { border-bottom: none; }
+    .cases-grid { grid-template-columns: 1fr; }
+    .focus-section .section-inner::before,
+    .message-section .section-inner::before,
+    .services-section .section-inner::before,
+    .profile-section .section-inner::before,
+    .cases-section .section-inner::before {
+      top: -22px;
+      left: -14px;
+      width: min(420px, 86%);
+      height: 196px;
+    }
+    .case-card:first-child,
+    .case-card:nth-child(2),
+    .case-card:nth-child(3) { grid-column: auto; }
+    .case-card:first-child .case-title { font-size: 24px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-image-wrap,
+    .hero-shape-1,
+    .hero-shape-2,
+    .hero-mountain,
+    .message-section::before,
+    .message-section::after,
+    .stats-section::before,
+    .stats-section::after,
+    .focus-section::before,
+    .services-section::before,
+    .profile-section::before,
+    .cases-section::before {
+      transform: none !important;
+    }
   }
 </style>
 </head>
@@ -421,6 +727,10 @@
 ============================================= -->
 <section id="hero" class="above-fold">
   <div class="hero-bg">
+    <div class="hero-image-wrap" aria-hidden="true">
+      <div class="hero-image-layer"></div>
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-shape-1"></div>
     <div class="hero-shape-2"></div>
     <svg class="hero-mountain" viewBox="0 0 600 400" fill="none">
@@ -431,23 +741,27 @@
     </svg>
   </div>
   <div class="hero-content">
-    <h1 class="hero-title reveal">
-      誰かを支えてきた<br>
-      あなたが、<br>
-      次の役割へ進む場
-    </h1>
-    <div class="hero-divider reveal reveal-delay-1">
-      <div class="hero-divider-line"></div>
-      <div class="hero-divider-dot"></div>
-      <div class="hero-divider-line"></div>
+    <div class="hero-shell">
+      <div class="hero-copy-block">
+        <h1 class="hero-title reveal">
+          誰かを支えてきた<br>
+          あなたが、<br>
+          次の役割へ進む場
+        </h1>
+        <div class="hero-divider reveal reveal-delay-1">
+          <div class="hero-divider-line"></div>
+          <div class="hero-divider-dot"></div>
+          <div class="hero-divider-line"></div>
+        </div>
+        <p class="hero-sub reveal reveal-delay-2">
+          本来の自分へ還るための、静かな変容の場
+        </p>
+        <a href="contact.html" class="hero-cta reveal reveal-delay-3">
+          ご相談はこちら
+          <span class="btn-arrow"></span>
+        </a>
+      </div>
     </div>
-    <p class="hero-sub reveal reveal-delay-2">
-      本来の自分へ還るための、静かな変容の場
-    </p>
-    <a href="contact.html" class="hero-cta reveal reveal-delay-3">
-      ご相談はこちら
-      <span class="btn-arrow"></span>
-    </a>
   </div>
   <div class="hero-scroll">
     <div class="hero-scroll-line"></div>
@@ -455,41 +769,46 @@
   </div>
 </section>
 
+<section class="trust-strip">
+  <div class="trust-strip-inner">
+    <div class="trust-strip-label reveal">RELATED ORGANIZATIONS</div>
+    <div class="trust-strip-list reveal reveal-delay-1">
+      <span class="trust-strip-chip">株式会社 Office Maki.tv</span>
+      <span class="trust-strip-chip">TheReBrand.inc</span>
+      <span class="trust-strip-chip">Moon &amp; Trust</span>
+      <span class="trust-strip-chip">APJ Media</span>
+      <span class="trust-strip-chip">StrengthsFinder認定</span>
+    </div>
+  </div>
+</section>
+
 <!-- =============================================
      RESULTS & STATS
 ============================================= -->
-<div class="stats-section">
+<div class="stats-section pattern-arcs-dark">
   <div class="section-inner">
     <div class="section-label reveal">RESULTS</div>
     <h2 class="section-title reveal reveal-delay-1">
       数字で見る実績
       <span class="section-title-en" style="color:rgba(244,240,232,0.4);">BY THE NUMBERS</span>
     </h2>
-    <div class="stats-grid">
-      <div class="stat-item reveal reveal-delay-1">
+    <div class="stats-grid reveal reveal-delay-2">
+      <div class="stat-item">
         <div class="stat-number">50<sub>+</sub></div>
         <div class="stat-label">コーチング実績（人）</div>
       </div>
-      <div class="stat-item reveal reveal-delay-2">
+      <div class="stat-item">
         <div class="stat-number">10<sub>年</sub></div>
         <div class="stat-label">HR・組織変革の経験</div>
       </div>
-      <div class="stat-item reveal reveal-delay-3">
+      <div class="stat-item">
         <div class="stat-number">4<sub>〜</sub>50</div>
         <div class="stat-label">支援クライアント規模（名）</div>
       </div>
-      <div class="stat-item reveal reveal-delay-4">
+      <div class="stat-item">
         <div class="stat-number">3,000<sub>+</sub></div>
         <div class="stat-label">積み重ねた対話時間</div>
       </div>
-    </div>
-    <div class="clients-row reveal reveal-delay-2">
-      <div class="clients-label">RELATED ORGANIZATIONS</div>
-      <span class="client-chip">株式会社 Office Maki.tv</span>
-      <span class="client-chip">TheReBrand.inc</span>
-      <span class="client-chip">Moon &amp; Trust</span>
-      <span class="client-chip">APJ Media</span>
-      <span class="client-chip">StrengthsFinder認定</span>
     </div>
   </div>
 </div>
@@ -504,8 +823,8 @@
       実績のある支援領域
       <span class="section-title-en">WHERE I SUPPORT</span>
     </h2>
-    <div class="focus-grid">
-      <article class="focus-card reveal reveal-delay-1">
+    <div class="focus-grid reveal reveal-delay-2">
+      <article class="focus-card">
         <div class="focus-kicker">AUDIENCE</div>
         <h3 class="focus-title">経営者・管理職・<br>変革推進者の伴走</h3>
         <p class="focus-copy">人や組織を支えてきた立場の方が、次の役割に進むための整理・対話・意思決定を支援します。</p>
@@ -516,7 +835,7 @@
           <span class="focus-pill">変革推進者</span>
         </div>
       </article>
-      <article class="focus-card reveal reveal-delay-2">
+      <article class="focus-card">
         <div class="focus-kicker">THEMES</div>
         <h3 class="focus-title">組織変革・<br>キャリア変容・言語化支援</h3>
         <p class="focus-copy">個人の変容と組織の変化を切り離さず、対話・1on1・ブランド言語化まで一貫して設計します。</p>
@@ -527,7 +846,7 @@
           <span class="focus-pill">ブランド設計</span>
         </div>
       </article>
-      <article class="focus-card reveal reveal-delay-3">
+      <article class="focus-card">
         <div class="focus-kicker">OUTCOMES</div>
         <h3 class="focus-title">違和感の言語化から、<br>行動変化までつなぐ</h3>
         <p class="focus-copy">見えにくい課題を言葉にし、役割整理・意思決定・チーム対話・発信設計まで前進につながる形に落とし込みます。</p>
@@ -545,7 +864,7 @@
 <!-- =============================================
      CONCEPT / MESSAGE
 ============================================= -->
-<div class="message-section">
+<div class="message-section pattern-arcs">
   <div class="section-inner">
     <div class="message-inner">
       <div class="section-label reveal" style="justify-content:center;">CONCEPT</div>
@@ -594,8 +913,8 @@
       ご相談内容を単なるメニューではなく、「いま何が詰まっているか」から整理し、
       個人・組織・発信の3つの観点で必要な支援を組み立てます。
     </p>
-    <div class="services-grid">
-      <article class="solution-card reveal reveal-delay-1">
+    <div class="services-grid reveal reveal-delay-3">
+      <article class="solution-card">
         <div class="solution-problem">SOLUTION 01</div>
         <h3 class="solution-title">役割が広がるほど、<br>自分の軸が見えにくくなっている</h3>
         <p class="solution-point"><strong>対象</strong>経営者、管理職、次の役割を担うリーダー</p>
@@ -606,7 +925,7 @@
           <span class="service-tag">CAREER</span>
         </div>
       </article>
-      <article class="solution-card reveal reveal-delay-2">
+      <article class="solution-card">
         <div class="solution-problem">SOLUTION 02</div>
         <h3 class="solution-title">組織の空気や対話の質を、<br>根本から変えていきたい</h3>
         <p class="solution-point"><strong>対象</strong>組織変革を担う経営層・人事・マネージャー</p>
@@ -617,7 +936,7 @@
           <span class="service-tag">TRAINING</span>
         </div>
       </article>
-      <article class="solution-card reveal reveal-delay-3">
+      <article class="solution-card">
         <div class="solution-problem">SOLUTION 03</div>
         <h3 class="solution-title">価値はあるのに、<br>言葉や発信の形にできていない</h3>
         <p class="solution-point"><strong>対象</strong>個人事業主、専門家、ブランド再整理をしたい事業者</p>
@@ -645,8 +964,8 @@
       プロフィール
       <span class="section-title-en">WHO I AM</span>
     </h2>
-    <div class="about-grid">
-      <div class="about-bio reveal reveal-delay-2">
+    <div class="about-grid reveal reveal-delay-2">
+      <div class="about-bio">
         <p>
           <strong>小畑寿哉</strong>（おばた としや）。<br>
           HR・組織変革・キャリア支援の領域で活動する変容の導き手。
@@ -664,7 +983,7 @@
           <a href="about.html" class="more-link">プロフィール詳細へ</a>
         </div>
       </div>
-      <div class="trust-panel reveal reveal-delay-3">
+      <div class="trust-panel">
         <div class="trust-card">
           <div class="trust-label">EXPERTISE</div>
           <div class="trust-copy">HR・組織変革・キャリア支援・ブランド言語化を横断し、個人と組織の変化をつなぐ支援を行っています。</div>
@@ -700,8 +1019,8 @@
       事例
       <span class="section-title-en">SELECTED CASES</span>
     </h2>
-    <div class="cases-grid">
-      <article class="case-card reveal reveal-delay-1">
+    <div class="cases-grid reveal reveal-delay-2">
+      <article class="case-card">
         <div class="case-label">CASE 01</div>
         <h3 class="case-title">管理職としての次の役割を整理し、意思決定の軸を言語化</h3>
         <div class="case-meta">40代・管理職 / 1on1コーチング</div>
@@ -718,7 +1037,7 @@
           <p class="case-block-copy">役割への納得感が高まり、周囲に流されずに次の一歩を選べる状態へ。</p>
         </div>
       </article>
-      <article class="case-card reveal reveal-delay-2">
+      <article class="case-card">
         <div class="case-label">CASE 02</div>
         <h3 class="case-title">対話の質を変え、チームの空気と関係性を再設計</h3>
         <div class="case-meta">経営者・50代 / 組織変革コンサルティング</div>
@@ -735,7 +1054,7 @@
           <p class="case-block-copy">チームメンバーが自分の言葉で語るようになり、組織の空気そのものに変化が生まれた。</p>
         </div>
       </article>
-      <article class="case-card reveal reveal-delay-3">
+      <article class="case-card">
         <div class="case-label">CASE 03</div>
         <h3 class="case-title">ブランドの本質を言葉にし、伝わる発信へ再構成</h3>
         <div class="case-meta">個人事業主・フリーランス / LP・PRコンテンツ制作支援</div>

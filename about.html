@@ -10,6 +10,59 @@
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="common.css">
 <style>
+  .intro-section,
+  .expertise-section,
+  .timeline-section,
+  .philosophy-section {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .intro-section::before,
+  .expertise-section::before,
+  .timeline-section::before,
+  .philosophy-section::before {
+    content: '';
+    position: absolute;
+    inset: -8%;
+    background-image: url('assets/parallax-section-bg.svg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    transform: scale(1.015);
+    z-index: 0;
+    pointer-events: none;
+    contain: paint;
+  }
+  .intro-section::after,
+  .expertise-section::after,
+  .timeline-section::after,
+  .philosophy-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .intro-section::after {
+    background: linear-gradient(180deg, rgba(234,228,214,0.84) 0%, rgba(234,228,214,0.95) 100%);
+  }
+  .expertise-section::after {
+    background: linear-gradient(180deg, rgba(244,240,232,0.84) 0%, rgba(244,240,232,0.96) 100%);
+  }
+  .timeline-section::after {
+    background: linear-gradient(180deg, rgba(234,228,214,0.82) 0%, rgba(234,228,214,0.94) 100%);
+  }
+  .philosophy-section::after {
+    background: linear-gradient(180deg, rgba(244,240,232,0.84) 0%, rgba(244,240,232,0.96) 100%);
+  }
+  .intro-section .section-inner,
+  .expertise-section .section-inner,
+  .timeline-section .section-inner,
+  .philosophy-section .section-inner {
+    position: relative;
+    z-index: 1;
+  }
   .intro-section {
     background: var(--ivory-d);
     padding: 100px 48px 88px;
@@ -198,9 +251,25 @@
     .expertise-section,
     .timeline-section,
     .philosophy-section { padding-left: 24px; padding-right: 24px; }
+    .intro-section::before,
+    .expertise-section::before,
+    .timeline-section::before,
+    .philosophy-section::before {
+      inset: -12%;
+      opacity: 0.15;
+      transform: scale(1.01);
+    }
     .intro-grid,
     .expertise-grid,
     .philosophy-grid { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .intro-section::before,
+    .expertise-section::before,
+    .timeline-section::before,
+    .philosophy-section::before {
+      transform: scale(1.01) !important;
+    }
   }
 </style>
 </head>
@@ -217,8 +286,8 @@
 
 <section class="intro-section">
   <div class="section-inner">
-    <div class="intro-grid">
-      <div class="about-bio reveal">
+    <div class="intro-grid reveal">
+      <div class="about-bio">
         <div class="profile-role">ORGANIZATIONAL TRANSFORMATION / COACHING / BRAND LANGUAGE</div>
         <p>
           <strong>小畑寿哉</strong>（おばた としや）。<br>
@@ -247,7 +316,7 @@
         </div>
       </div>
 
-      <div class="trust-panel reveal reveal-delay-2">
+      <div class="trust-panel">
         <div class="trust-card">
           <div class="trust-label">TRACK RECORD</div>
           <div class="trust-copy">10年にわたるHR・組織変革経験、50名以上のコーチング実績、3,000時間以上の対話の積み重ねがあります。</div>
@@ -272,18 +341,18 @@
       専門領域
       <span class="section-title-en">AREAS OF EXPERTISE</span>
     </h2>
-    <div class="expertise-grid">
-      <article class="expertise-card reveal reveal-delay-1">
+    <div class="expertise-grid reveal reveal-delay-2">
+      <article class="expertise-card">
         <div class="expertise-label">INDIVIDUAL</div>
         <h3 class="expertise-title">1on1コーチングと<br>キャリア変容支援</h3>
         <p class="expertise-copy">役割の迷い、強みの再整理、意思決定の言語化を通じて、次のフェーズへ進むための土台を整えます。</p>
       </article>
-      <article class="expertise-card reveal reveal-delay-2">
+      <article class="expertise-card">
         <div class="expertise-label">ORGANIZATION</div>
         <h3 class="expertise-title">組織変革と<br>対話設計支援</h3>
         <p class="expertise-copy">1on1、チームビルディング、関係性の再設計を通じて、組織の空気と対話の質を改善します。</p>
       </article>
-      <article class="expertise-card reveal reveal-delay-3">
+      <article class="expertise-card">
         <div class="expertise-label">BRAND</div>
         <h3 class="expertise-title">ブランド言語化と<br>発信設計支援</h3>
         <p class="expertise-copy">価値の棚卸しからLP・PR・発信導線まで整え、「伝わる表現」へ落とし込みます。</p>
@@ -329,16 +398,16 @@
       大切にしていること
       <span class="section-title-en">MISSION / VISION / APPROACH</span>
     </h2>
-    <div class="philosophy-grid">
-      <article class="philosophy-card reveal reveal-delay-1">
+    <div class="philosophy-grid reveal reveal-delay-2">
+      <article class="philosophy-card">
         <div class="philosophy-label">MISSION</div>
         <div class="philosophy-text">静かな変容を通じて、本来の自分へ還るための場を届ける</div>
       </article>
-      <article class="philosophy-card reveal reveal-delay-2">
+      <article class="philosophy-card">
         <div class="philosophy-label">VISION</div>
         <div class="philosophy-text">誰もが自分の内なる力を信じ、次のフェーズへと進める社会</div>
       </article>
-      <article class="philosophy-card reveal reveal-delay-3">
+      <article class="philosophy-card">
         <div class="philosophy-label">APPROACH</div>
         <div class="philosophy-text">叡智・深さ・品格をもって、内なる力を引き出す対話</div>
       </article>

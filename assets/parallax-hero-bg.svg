@@ -1,0 +1,67 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgBase" x1="240" y1="120" x2="1360" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7F3EA"/>
+      <stop offset="0.52" stop-color="#F1EBDD"/>
+      <stop offset="1" stop-color="#E8E0D1"/>
+    </linearGradient>
+    <radialGradient id="navyBloom" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1230 208) rotate(126.166) scale(592.861 744.944)">
+      <stop stop-color="#2D3A64" stop-opacity="0.30"/>
+      <stop offset="0.58" stop-color="#3A4874" stop-opacity="0.13"/>
+      <stop offset="1" stop-color="#2D3A64" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="plumBloom" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(358 690) rotate(11.0789) scale(522.873 301.527)">
+      <stop stop-color="#5C3B8A" stop-opacity="0.15"/>
+      <stop offset="0.62" stop-color="#5C3B8A" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#5C3B8A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="goldMist" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(930 510) rotate(152.659) scale(462.792 213.365)">
+      <stop stop-color="#C2A46D" stop-opacity="0.18"/>
+      <stop offset="0.55" stop-color="#D9BA87" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#D9BA87" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ridgeA" x1="885" y1="346" x2="1276" y2="835" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2D3A64" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#2D3A64" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="ridgeB" x1="942" y1="384" x2="1382" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5C3B8A" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#5C3B8A" stop-opacity="0.01"/>
+    </linearGradient>
+    <linearGradient id="haze" x1="800" y1="512" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4F0E8" stop-opacity="0"/>
+      <stop offset="1" stop-color="#F4F0E8" stop-opacity="0.88"/>
+    </linearGradient>
+    <filter id="blurSoft" x="0" y="0" width="1600" height="900" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bgBase)"/>
+  <rect width="1600" height="900" fill="url(#navyBloom)"/>
+  <rect width="1600" height="900" fill="url(#plumBloom)"/>
+  <rect width="1600" height="900" fill="url(#goldMist)"/>
+
+  <g opacity="0.5">
+    <path d="M955 121C1089 146 1210 183 1315 250C1423 318 1499 405 1542 511" stroke="#C2A46D" stroke-opacity="0.2" stroke-width="1.5"/>
+    <path d="M868 180C1038 199 1179 248 1294 327C1384 389 1458 464 1518 552" stroke="#F4F0E8" stroke-opacity="0.26" stroke-width="1"/>
+    <path d="M1005 145C1158 193 1282 270 1377 378" stroke="#2D3A64" stroke-opacity="0.08" stroke-width="1"/>
+  </g>
+
+  <g filter="url(#blurSoft)" opacity="0.48">
+    <ellipse cx="1242" cy="246" rx="156" ry="96" fill="#F8F4ED"/>
+    <ellipse cx="1114" cy="204" rx="104" ry="64" fill="#FFFFFF" fill-opacity="0.56"/>
+  </g>
+
+  <path d="M760 900C835 820 914 744 992 688C1059 639 1127 596 1199 563C1300 516 1400 484 1501 464C1535 458 1568 454 1600 451V900H760Z" fill="url(#ridgeA)"/>
+  <path d="M888 900C960 830 1032 768 1107 717C1207 650 1310 602 1413 568C1474 548 1536 533 1600 523V900H888Z" fill="url(#ridgeB)"/>
+  <path d="M1036 898C1093 832 1152 776 1215 731C1290 677 1374 637 1470 608C1513 595 1556 585 1600 577V898H1036Z" fill="#F4F0E8" fill-opacity="0.14"/>
+  <path d="M0 900C81 824 159 765 235 719C332 660 436 614 542 581C685 536 819 516 943 513C1015 511 1088 517 1162 531L1174 900H0Z" fill="url(#haze)"/>
+
+  <g opacity="0.42">
+    <circle cx="1277" cy="166" r="3" fill="#F4F0E8"/>
+    <circle cx="1334" cy="202" r="2" fill="#C2A46D" fill-opacity="0.8"/>
+    <circle cx="1186" cy="146" r="2.2" fill="#F4F0E8"/>
+    <circle cx="1397" cy="250" r="1.8" fill="#FFFFFF" fill-opacity="0.75"/>
+  </g>
+</svg>

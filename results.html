@@ -19,9 +19,24 @@
   .stats-section::before {
     content: '';
     position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at right, rgba(92,59,138,0.3) 0%, transparent 70%);
+    inset: -200px;
+    background: radial-gradient(ellipse at right, rgba(92,59,138,0.32) 0%, transparent 70%);
     pointer-events: none;
+  }
+  .stats-section::after {
+    content: '';
+    position: absolute;
+    inset: -8%;
+    background-image:
+      radial-gradient(86% 58% at 82% 10%, rgba(244,240,232,0.08) 0%, rgba(244,240,232,0) 52%),
+      radial-gradient(70% 54% at 88% 100%, rgba(92,59,138,0.18) 0%, rgba(92,59,138,0) 58%),
+      linear-gradient(180deg, rgba(45,58,100,0.76) 0%, rgba(45,58,100,0.92) 100%),
+      url('assets/parallax-section-bg.svg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 0;
   }
   .stats-section .section-label { color: var(--gold); }
   .stats-section .section-label::before { background: var(--gold); }
@@ -221,27 +236,27 @@
   </div>
 </div>
 
-<div class="stats-section">
+<div class="stats-section pattern-arcs-dark">
   <div class="section-inner">
     <div class="section-label reveal">NUMBERS</div>
     <h2 class="section-title reveal reveal-delay-1">
       数字で見る実績
       <span class="section-title-en" style="color:rgba(244,240,232,0.4);">BY THE NUMBERS</span>
     </h2>
-    <div class="stats-grid">
-      <div class="stat-item reveal reveal-delay-1">
+    <div class="stats-grid reveal reveal-delay-2">
+      <div class="stat-item">
         <div class="stat-number">50<sub>+</sub></div>
         <div class="stat-label">コーチング実績（人）</div>
       </div>
-      <div class="stat-item reveal reveal-delay-2">
+      <div class="stat-item">
         <div class="stat-number">10<sub>年</sub></div>
         <div class="stat-label">HR・組織変革の経験</div>
       </div>
-      <div class="stat-item reveal reveal-delay-3">
+      <div class="stat-item">
         <div class="stat-number">4<sub>〜</sub>50</div>
         <div class="stat-label">支援クライアント規模（名）</div>
       </div>
-      <div class="stat-item reveal reveal-delay-4">
+      <div class="stat-item">
         <div class="stat-number">3,000<sub>+</sub></div>
         <div class="stat-label">積み重ねた対話時間</div>
       </div>
@@ -257,25 +272,25 @@
   </div>
 </div>
 
-<section class="outcome-section">
+<section class="outcome-section pattern-arcs">
   <div class="section-inner">
     <div class="section-label reveal">OUTCOMES</div>
     <h2 class="section-title reveal reveal-delay-1">
       支援の中で生まれてきた変化
       <span class="section-title-en">IMPACT AREAS</span>
     </h2>
-    <div class="outcome-grid">
-      <article class="outcome-card reveal reveal-delay-1">
+    <div class="outcome-grid reveal reveal-delay-2">
+      <article class="outcome-card">
         <div class="outcome-label">INDIVIDUAL</div>
         <h3 class="outcome-title">意思決定の軸が定まり、<br>次の役割へ進みやすくなる</h3>
         <p class="outcome-copy">迷いの整理、強みの再発見、キャリアの言語化を通じて、自分の選択に納得感を持てる状態を支援しています。</p>
       </article>
-      <article class="outcome-card reveal reveal-delay-2">
+      <article class="outcome-card">
         <div class="outcome-label">TEAM</div>
         <h3 class="outcome-title">対話の質が変わり、<br>組織の空気が動き始める</h3>
         <p class="outcome-copy">1on1やチーム対話の設計によって、メンバーが自分の言葉で話し、関係性が前向きに動く場をつくります。</p>
       </article>
-      <article class="outcome-card reveal reveal-delay-3">
+      <article class="outcome-card">
         <div class="outcome-label">BRAND</div>
         <h3 class="outcome-title">価値が言葉になり、<br>伝わる発信へ再構成される</h3>
         <p class="outcome-copy">ブランドの本質や提供価値を整理し、LP・PR・発信文脈の中で一貫して伝わる表現へ落とし込みます。</p>
@@ -284,15 +299,15 @@
   </div>
 </section>
 
-<section class="cases-section">
+<section class="cases-section pattern-arcs">
   <div class="section-inner">
     <div class="section-label reveal">CASES</div>
     <h2 class="section-title reveal reveal-delay-1">
       代表的な支援事例
       <span class="section-title-en">SELECTED CASES</span>
     </h2>
-    <div class="cases-grid">
-      <article class="case-card reveal reveal-delay-1">
+    <div class="cases-grid reveal reveal-delay-2">
+      <article class="case-card">
         <div class="case-label">CASE 01</div>
         <h3 class="case-title">管理職としての次の役割を整理し、意思決定の軸を言語化</h3>
         <div class="case-meta">40代・管理職 / 1on1コーチング / 継続セッション</div>
@@ -309,7 +324,7 @@
           <p class="case-block-copy">役割への納得感が高まり、周囲に流されずに次の一歩を選べる状態へ。</p>
         </div>
       </article>
-      <article class="case-card reveal reveal-delay-2">
+      <article class="case-card">
         <div class="case-label">CASE 02</div>
         <h3 class="case-title">対話の質を変え、チームの空気と関係性を再設計</h3>
         <div class="case-meta">経営者・50代 / 組織変革コンサルティング / 4〜50名規模</div>
@@ -326,7 +341,7 @@
           <p class="case-block-copy">自分の言葉で語るメンバーが増え、組織の空気そのものに変化が生まれた。</p>
         </div>
       </article>
-      <article class="case-card reveal reveal-delay-3">
+      <article class="case-card">
         <div class="case-label">CASE 03</div>
         <h3 class="case-title">ブランドの本質を言葉にし、伝わる発信へ再構成</h3>
         <div class="case-meta">個人事業主・フリーランス / LP・PRコンテンツ制作支援</div>
@@ -347,19 +362,19 @@
   </div>
 </section>
 
-<section class="voice-section">
+<section class="voice-section pattern-arcs">
   <div class="section-inner">
     <div class="section-label reveal">VOICE</div>
     <h2 class="section-title reveal reveal-delay-1">
       クライアントの声
       <span class="section-title-en">CLIENT VOICES</span>
     </h2>
-    <div class="voice-grid">
-      <article class="voice-card reveal reveal-delay-1">
+    <div class="voice-grid reveal reveal-delay-2">
+      <article class="voice-card">
         <p class="voice-text">長年の迷いがほどけた感覚でした。自分がどこへ向かいたいのか、初めて腑に落ちた気がします。</p>
         <div class="voice-meta">40代・管理職<span>1on1コーチング</span></div>
       </article>
-      <article class="voice-card reveal reveal-delay-2">
+      <article class="voice-card">
         <p class="voice-text">組織の空気が変わりました。メンバーが自分の言葉で語るようになり、関係性が前向きに動き始めました。</p>
         <div class="voice-meta">経営者・50代<span>組織変革コンサルティング</span></div>
       </article>

@@ -81,12 +81,6 @@
     }
   });
 
-  // Nav scroll effect
-  window.addEventListener('scroll', () => {
-    const nav = document.getElementById('main-nav');
-    if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
-  });
-
   // Inject footer
   const footerEl = document.querySelector('footer#main-footer');
   if (footerEl) {
@@ -112,21 +106,9 @@
     `;
   }
 
-  // Scroll reveal
-  const revealEls = document.querySelectorAll('.reveal');
-  const revealObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        revealObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  revealEls.forEach(el => revealObs.observe(el));
-
-  // Immediately reveal above-fold elements
-  document.querySelectorAll('.above-fold .reveal, .page-hero .reveal').forEach(el => {
-    setTimeout(() => el.classList.add('visible'), 150);
+  // Keep reveal-marked sections visible without scroll animation.
+  document.querySelectorAll('.reveal').forEach(el => {
+    el.classList.add('visible');
   });
 
   // Page fade-in on load
@@ -151,8 +133,25 @@
   topBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 12V2M2 6l5-5 5 5" stroke="currentColor" stroke-width="1.2"/></svg>';
   document.body.appendChild(topBtn);
   topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Limit scroll work to nav state and back-to-top visibility only.
+  const nav = document.getElementById('main-nav');
+  let latestScrollY = window.scrollY;
+  let scrollTicking = false;
+
+  const applyScrollEffects = () => {
+    if (nav) nav.classList.toggle('scrolled', latestScrollY > 60);
+    topBtn.classList.toggle('visible', latestScrollY > 400);
+    scrollTicking = false;
+  };
+
   window.addEventListener('scroll', () => {
-    topBtn.classList.toggle('visible', window.scrollY > 400);
-  });
+    latestScrollY = window.scrollY;
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(applyScrollEffects);
+  }, { passive: true });
+
+  applyScrollEffects();
 
 })();
