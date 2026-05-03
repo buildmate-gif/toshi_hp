@@ -16,9 +16,16 @@
   ];
 
   const logoSVG = `<svg class="nav-logo-mark" viewBox="0 0 40 40" fill="none">
-    <circle cx="20" cy="20" r="18" stroke="var(--gold)" stroke-width="1"/>
-    <path class="logo-path-main" d="M10 26 Q15 14 20 18 Q25 22 30 14" stroke-width="1.2" fill="none"/>
-    <path class="logo-path-sub" d="M8 30 Q14 22 20 26 Q26 30 32 22" stroke-width="0.8" fill="none" opacity="0.6"/>
+    <!-- アイボリー側（下半） -->
+    <circle cx="20" cy="20" r="16" fill="#EAE4D6"/>
+    <!-- ネイビー側（上半） S字曲線で勾玉の二分割 -->
+    <path d="M 20 4 A 16 16 0 0 1 20 36 A 8 8 0 0 0 20 20 A 8 8 0 0 1 20 4 Z" fill="#2D3A64"/>
+    <!-- ゴールドの目（ネイビー側） -->
+    <circle cx="20" cy="12" r="3.8" fill="#C2A46D"/>
+    <!-- ネイビーの目（アイボリー側） -->
+    <circle cx="20" cy="28" r="3.8" fill="#2D3A64"/>
+    <!-- ゴールドの外輪 -->
+    <circle cx="20" cy="20" r="17" stroke="#C2A46D" stroke-width="0.9" fill="none"/>
   </svg>`;
 
   // Build nav links HTML
