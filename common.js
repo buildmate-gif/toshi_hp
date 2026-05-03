@@ -16,16 +16,18 @@
   ];
 
   const logoSVG = `<svg class="nav-logo-mark" viewBox="0 0 40 40" fill="none">
-    <!-- アイボリー側（下半） -->
-    <circle cx="20" cy="20" r="16" fill="#EAE4D6"/>
-    <!-- ネイビー側（上半） S字曲線で勾玉の二分割 -->
-    <path d="M 20 4 A 16 16 0 0 1 20 36 A 8 8 0 0 0 20 20 A 8 8 0 0 1 20 4 Z" fill="#2D3A64"/>
-    <!-- ゴールドの目（ネイビー側） -->
-    <circle cx="20" cy="12" r="3.8" fill="#C2A46D"/>
-    <!-- ネイビーの目（アイボリー側） -->
-    <circle cx="20" cy="28" r="3.8" fill="#2D3A64"/>
-    <!-- ゴールドの外輪 -->
-    <circle cx="20" cy="20" r="17" stroke="#C2A46D" stroke-width="0.9" fill="none"/>
+    <!-- ゴールド外輪 -->
+    <circle cx="20" cy="20" r="17" stroke="#C2A46D" stroke-width="0.9"/>
+    <!-- 勾玉1（ネイビー太弧）右側を回り込む -->
+    <path d="M 22 7 C 32 10 34 20 30 27 C 27 32 20 34 16 31"
+          stroke="#2D3A64" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+    <!-- 勾玉2（ゴールド細弧）左側を逆方向に回り込む -->
+    <path d="M 18 33 C 8 30 6 20 10 13 C 13 8 20 6 24 9"
+          stroke="#C2A46D" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.85"/>
+    <!-- 勾玉1の頭部（ネイビー丸） -->
+    <circle cx="22" cy="7" r="2.8" fill="#2D3A64"/>
+    <!-- 勾玉2の頭部（ゴールド丸） -->
+    <circle cx="18" cy="33" r="2" fill="#C2A46D"/>
   </svg>`;
 
   // Build nav links HTML
