@@ -238,8 +238,20 @@
     background: linear-gradient(180deg, rgba(244,240,232,0.84) 0%, rgba(244,240,232,0.95) 100%);
   }
   .cases-section::after {
-    background: linear-gradient(180deg, rgba(234,228,214,0.82) 0%, rgba(234,228,214,0.94) 100%);
+    background: linear-gradient(180deg, rgba(30,40,75,0.78) 0%, rgba(30,40,75,0.88) 100%);
   }
+  .cases-section .section-title { color: var(--ivory); }
+  .cases-section .case-card {
+    background: rgba(244,240,232,0.06);
+    border-color: rgba(194,164,109,0.22);
+    box-shadow: 0 18px 44px rgba(0,0,0,0.22);
+  }
+  .cases-section .case-title { color: var(--ivory); }
+  .cases-section .case-meta {
+    color: rgba(244,240,232,0.52);
+    border-bottom-color: rgba(194,164,109,0.18);
+  }
+  .cases-section .case-block-copy { color: rgba(244,240,232,0.68); }
   .focus-section .section-inner,
   .message-section .section-inner,
   .services-section .section-inner,
@@ -281,14 +293,14 @@
 
   /* Message Section (from message.html) */
   .message-section {
-    background: var(--ivory-d); padding: 120px 48px;
+    background: var(--navy); padding: 120px 48px;
     position: relative; overflow: hidden; text-align: center;
   }
   .message-section::before {
     content: ''; position: absolute;
     top: -200px; right: -200px;
     width: 700px; height: 700px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(92,59,138,0.06) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(92,59,138,0.18) 0%, transparent 70%);
     pointer-events: none;
     transform: none;
     z-index: 0;
@@ -298,13 +310,13 @@
     position: absolute;
     inset: -10%;
     background-image:
-      radial-gradient(72% 48% at 84% 16%, rgba(45,58,100,0.08) 0%, rgba(45,58,100,0) 58%),
-      radial-gradient(54% 40% at 16% 86%, rgba(92,59,138,0.08) 0%, rgba(92,59,138,0) 58%),
-      linear-gradient(180deg, rgba(234,228,214,0.72) 0%, rgba(234,228,214,0.9) 100%),
+      radial-gradient(72% 48% at 84% 16%, rgba(194,164,109,0.12) 0%, rgba(45,58,100,0) 58%),
+      radial-gradient(54% 40% at 16% 86%, rgba(92,59,138,0.2) 0%, rgba(92,59,138,0) 58%),
+      linear-gradient(180deg, rgba(45,58,100,0.55) 0%, rgba(45,58,100,0.72) 100%),
       url('assets/parallax-section-bg.svg');
     background-size: cover;
     background-position: center;
-    opacity: 0.28;
+    opacity: 0.32;
     transform: none;
     z-index: 0;
     pointer-events: none;
@@ -320,16 +332,16 @@
     font-family: var(--serif);
     font-size: clamp(22px, 3vw, 36px);
     font-weight: 400; line-height: 2;
-    color: var(--navy); letter-spacing: 0.1em;
+    color: var(--ivory); letter-spacing: 0.1em;
     margin-bottom: 48px;
   }
   .message-body {
-    font-size: 15px; color: var(--ink-l);
+    font-size: 15px; color: rgba(244,240,232,0.72);
     line-height: 2.6; font-weight: 300;
     text-align: left; max-width: 680px; margin: 0 auto;
   }
   .message-body p + p { margin-top: 32px; }
-  .message-body strong { color: var(--navy); font-weight: 500; }
+  .message-body strong { color: var(--gold-l); font-weight: 500; }
   
   .more-link-container { text-align: center; margin-top: 60px; }
   .more-link {
@@ -340,6 +352,14 @@
   }
   .more-link:hover { color: var(--gold); border-color: var(--gold); }
   .more-link::after { content: '→'; }
+  .message-section .more-link,
+  .cases-section .more-link {
+    color: rgba(244,240,232,0.7);
+    border-bottom-color: rgba(194,164,109,0.35);
+  }
+  .message-section .more-link:hover,
+  .cases-section .more-link:hover { color: var(--gold-l); border-color: var(--gold-l); }
+  .message-section .section-title { color: var(--ivory); }
 
   /* Services Section (from services.html) */
   .services-section { padding: 120px 48px; background: var(--ivory); }
@@ -538,7 +558,7 @@
     margin-top: 24px;
   }
 
-  .cases-section { background: var(--ivory-d); padding: 120px 48px; }
+  .cases-section { background: var(--navy); padding: 120px 48px; }
   .cases-grid {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
